@@ -1,0 +1,82 @@
+import { GlobalConfig } from 'payload'
+
+export const Settings: GlobalConfig = {
+  slug: 'settings',
+  fields: [
+    {
+      name: 'siteLogo',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
+      name: 'siteLogofooter',
+      label: 'Logo do Rodapé',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
+      name: 'LinkAssinatura',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'linkInstagram',
+      type: 'text',
+    },
+    {
+      name: 'linkYoutube',
+      type: 'text',
+    },
+    {
+      name: 'whatsapp',
+      type: 'number',
+    },
+    {
+      name: 'contactEmail',
+      label: 'Email de Contato',
+      type: 'email',
+      required: true,
+      admin: {
+        description: 'Email que receberá as mensagens do formulário de contato.',
+      },
+    },
+    {
+      name: 'unidades',
+      label: 'Unidades',
+      type: 'array',
+      fields: [
+        {
+          name: 'numero',
+          type: 'number',
+          required: true,
+        },
+        {
+          name: 'nome',
+          type: 'text',
+          required: true,
+        },
+        {
+          name: 'address',
+          type: 'richText',
+          required: true,
+        },
+        {
+          name: 'openingHours',
+          label: 'Horario de atendimento',
+          type: 'richText',
+          required: true,
+        },
+        {
+          name: 'linkInstagram',
+          type: 'text',
+        },
+        {
+          name: 'linkWhatsapp',
+          type: 'text',
+        },
+      ],
+    },
+  ],
+}

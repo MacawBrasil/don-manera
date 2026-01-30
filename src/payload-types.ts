@@ -87,8 +87,30 @@ export interface Config {
     defaultIDType: string;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    home: Home;
+    sobre: Sobre;
+    contato: Contato;
+    comunita: Comunita;
+    settings: Setting;
+    'landing-page': LandingPage;
+    Profissionale: Profissionale;
+    visagismo: Visagismo;
+    servicePage: ServicePage;
+    rimborso: Rimborso;
+  };
+  globalsSelect: {
+    home: HomeSelect<false> | HomeSelect<true>;
+    sobre: SobreSelect<false> | SobreSelect<true>;
+    contato: ContatoSelect<false> | ContatoSelect<true>;
+    comunita: ComunitaSelect<false> | ComunitaSelect<true>;
+    settings: SettingsSelect<false> | SettingsSelect<true>;
+    'landing-page': LandingPageSelect<false> | LandingPageSelect<true>;
+    Profissionale: ProfissionaleSelect<false> | ProfissionaleSelect<true>;
+    visagismo: VisagismoSelect<false> | VisagismoSelect<true>;
+    servicePage: ServicePageSelect<false> | ServicePageSelect<true>;
+    rimborso: RimborsoSelect<false> | RimborsoSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -312,6 +334,1447 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: string;
+  Hero: {
+    slides: {
+      slideText?: {
+        root: {
+          type: string;
+          children: {
+            type: any;
+            version: number;
+            [k: string]: unknown;
+          }[];
+          direction: ('ltr' | 'rtl') | null;
+          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+          indent: number;
+          version: number;
+        };
+        [k: string]: unknown;
+      } | null;
+      slideImage: string | Media;
+      id?: string | null;
+    }[];
+  };
+  exclusiveServices: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: string | Media;
+    buttonTitle?: string | null;
+    buttonLink?: string | null;
+  };
+  bannerGroup: {
+    image1: string | Media;
+    image2: string | Media;
+  };
+  brandSection: {
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: string | Media;
+    buttonTitle?: string | null;
+    buttonLink?: string | null;
+    video: string | Media;
+  };
+  benefitsSection: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    description: string;
+  };
+  differencesSection: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    description: string;
+  };
+  proffissionaleSection: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    description: string;
+  };
+  subscriptionBanner: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: string | Media;
+    buttonTitle?: string | null;
+    buttonLink?: string | null;
+  };
+  appSection: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: string | Media;
+    text: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    textSecondary: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sobre".
+ */
+export interface Sobre {
+  id: string;
+  hero: {
+    banner: string | Media;
+    titleBanner: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  text: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  image: string | Media;
+  liderancaText: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  liderancaImage: string | Media;
+  video: string | Media;
+  thumbVideo: string | Media;
+  profissionaisNumber: number;
+  avaliacoesNumber: number;
+  assinanterNumber: number;
+  unidadesNumber: number;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  image1: string | Media;
+  image2: string | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contato".
+ */
+export interface Contato {
+  id: string;
+  work: {
+    banner: string | Media;
+    image: string | Media;
+    titleBanner: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    advantages: {
+      title: string;
+      id?: string | null;
+    }[];
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "comunita".
+ */
+export interface Comunita {
+  id: string;
+  thumbInfo: {
+    title?: string | null;
+    logo?: (string | null) | Media;
+    description: string;
+    image: string | Media;
+  };
+  imageHero: string | Media;
+  sectionAbout: {
+    description1: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    benefits?:
+      | {
+          title?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    buttonText: string;
+    buttonLink: string;
+  };
+  sectionPlans: {
+    description: string;
+    plans?:
+      | {
+          color: string;
+          name: string;
+          image: string | Media;
+          description: string;
+          prices?:
+            | {
+                price: {
+                  title: string;
+                  description: string;
+                  price: string;
+                  link: string;
+                };
+                id?: string | null;
+              }[]
+            | null;
+          benefits?:
+            | {
+                benefit: string;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  faq: {
+    title: string;
+    description: string;
+    questions?:
+      | {
+          question: string;
+          answer: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "settings".
+ */
+export interface Setting {
+  id: string;
+  siteLogo: string | Media;
+  siteLogofooter: string | Media;
+  LinkAssinatura: string;
+  linkInstagram?: string | null;
+  linkYoutube?: string | null;
+  whatsapp?: number | null;
+  /**
+   * Email que receberá as mensagens do formulário de contato.
+   */
+  contactEmail: string;
+  unidades?:
+    | {
+        numero: number;
+        nome: string;
+        address: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        openingHours: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        linkInstagram?: string | null;
+        linkWhatsapp?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "landing-page".
+ */
+export interface LandingPage {
+  id: string;
+  hero: {
+    title: string;
+    logo1?: (string | null) | Media;
+    logo2?: (string | null) | Media;
+    background?: (string | null) | Media;
+  };
+  benefitsSection: {
+    image: string | Media;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    benefits?:
+      | {
+          benefit: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  bannerFooter: {
+    backgroundImage: string | Media;
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    buttonTitle?: string | null;
+    buttonLink?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Profissionale".
+ */
+export interface Profissionale {
+  id: string;
+  thumbInfo: {
+    title?: string | null;
+    logo?: (string | null) | Media;
+    description: string;
+    image: string | Media;
+  };
+  buttonText: string;
+  buttonLink: string;
+  imageHero: string | Media;
+  image2: string | Media;
+  about: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    modules: {
+      title: {
+        root: {
+          type: string;
+          children: {
+            type: any;
+            version: number;
+            [k: string]: unknown;
+          }[];
+          direction: ('ltr' | 'rtl') | null;
+          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+          indent: number;
+          version: number;
+        };
+        [k: string]: unknown;
+      };
+      id?: string | null;
+    }[];
+  };
+  educatorsSection: {
+    title: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    description: string;
+    educators: {
+      name: string;
+      image: string | Media;
+      description: string;
+      id?: string | null;
+    }[];
+  };
+  modulesSection: {
+    modules: {
+      icon: string | Media;
+      color: string;
+      type: {
+        root: {
+          type: string;
+          children: {
+            type: any;
+            version: number;
+            [k: string]: unknown;
+          }[];
+          direction: ('ltr' | 'rtl') | null;
+          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+          indent: number;
+          version: number;
+        };
+        [k: string]: unknown;
+      };
+      title: {
+        root: {
+          type: string;
+          children: {
+            type: any;
+            version: number;
+            [k: string]: unknown;
+          }[];
+          direction: ('ltr' | 'rtl') | null;
+          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+          indent: number;
+          version: number;
+        };
+        [k: string]: unknown;
+      };
+      description: string;
+      description2: {
+        root: {
+          type: string;
+          children: {
+            type: any;
+            version: number;
+            [k: string]: unknown;
+          }[];
+          direction: ('ltr' | 'rtl') | null;
+          format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+          indent: number;
+          version: number;
+        };
+        [k: string]: unknown;
+      };
+      image: string | Media;
+      link: string;
+      id?: string | null;
+    }[];
+  };
+  banner: {
+    title: string;
+    image: string | Media;
+    buttonLink: string;
+    buttonText: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visagismo".
+ */
+export interface Visagismo {
+  id: string;
+  thumbInfo: {
+    title?: string | null;
+    logo?: (string | null) | Media;
+    description: string;
+    image: string | Media;
+  };
+  imageHero: string | Media;
+  sectionAbout: {
+    description1: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    benefits?:
+      | {
+          title?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    buttonText: string;
+    buttonLink: string;
+  };
+  sectionResults: {
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    items?:
+      | {
+          beforeImage?: (string | null) | Media;
+          afterImage?: (string | null) | Media;
+          description?: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          } | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  faq: {
+    title: string;
+    description: string;
+    questions?:
+      | {
+          question: string;
+          answer: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "servicePage".
+ */
+export interface ServicePage {
+  id: string;
+  title: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  services: {
+    activeHome?: boolean | null;
+    image: string | Media;
+    title: string;
+    price: number;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "rimborso".
+ */
+export interface Rimborso {
+  id: string;
+  thumbInfo: {
+    title?: string | null;
+    logo?: (string | null) | Media;
+    description: string;
+    image: string | Media;
+  };
+  imageHero: string | Media;
+  sectionAbout: {
+    description1: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    benefits?:
+      | {
+          title?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    buttonText: string;
+    buttonLink: string;
+  };
+  pointsAndChanges: {
+    title: string;
+    description: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    image: string | Media;
+    items?:
+      | {
+          description: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          points: string;
+          id?: string | null;
+        }[]
+      | null;
+    text1: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    text2: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  howItWorks: {
+    title: string;
+    buttonText: string;
+    buttonLink: string;
+    items?:
+      | {
+          description: {
+            root: {
+              type: string;
+              children: {
+                type: any;
+                version: number;
+                [k: string]: unknown;
+              }[];
+              direction: ('ltr' | 'rtl') | null;
+              format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+              indent: number;
+              version: number;
+            };
+            [k: string]: unknown;
+          };
+          id?: string | null;
+        }[]
+      | null;
+  };
+  faq: {
+    title: string;
+    description: string;
+    questions?:
+      | {
+          question: string;
+          answer: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  Hero?:
+    | T
+    | {
+        slides?:
+          | T
+          | {
+              slideText?: T;
+              slideImage?: T;
+              id?: T;
+            };
+      };
+  exclusiveServices?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        buttonTitle?: T;
+        buttonLink?: T;
+      };
+  bannerGroup?:
+    | T
+    | {
+        image1?: T;
+        image2?: T;
+      };
+  brandSection?:
+    | T
+    | {
+        description?: T;
+        image?: T;
+        buttonTitle?: T;
+        buttonLink?: T;
+        video?: T;
+      };
+  benefitsSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  differencesSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  proffissionaleSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+      };
+  subscriptionBanner?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        buttonTitle?: T;
+        buttonLink?: T;
+      };
+  appSection?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        text?: T;
+        textSecondary?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sobre_select".
+ */
+export interface SobreSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        banner?: T;
+        titleBanner?: T;
+        description?: T;
+      };
+  text?: T;
+  image?: T;
+  liderancaText?: T;
+  liderancaImage?: T;
+  video?: T;
+  thumbVideo?: T;
+  profissionaisNumber?: T;
+  avaliacoesNumber?: T;
+  assinanterNumber?: T;
+  unidadesNumber?: T;
+  description?: T;
+  image1?: T;
+  image2?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contato_select".
+ */
+export interface ContatoSelect<T extends boolean = true> {
+  work?:
+    | T
+    | {
+        banner?: T;
+        image?: T;
+        titleBanner?: T;
+        description?: T;
+        advantages?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "comunita_select".
+ */
+export interface ComunitaSelect<T extends boolean = true> {
+  thumbInfo?:
+    | T
+    | {
+        title?: T;
+        logo?: T;
+        description?: T;
+        image?: T;
+      };
+  imageHero?: T;
+  sectionAbout?:
+    | T
+    | {
+        description1?: T;
+        benefits?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+            };
+        buttonText?: T;
+        buttonLink?: T;
+      };
+  sectionPlans?:
+    | T
+    | {
+        description?: T;
+        plans?:
+          | T
+          | {
+              color?: T;
+              name?: T;
+              image?: T;
+              description?: T;
+              prices?:
+                | T
+                | {
+                    price?:
+                      | T
+                      | {
+                          title?: T;
+                          description?: T;
+                          price?: T;
+                          link?: T;
+                        };
+                    id?: T;
+                  };
+              benefits?:
+                | T
+                | {
+                    benefit?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  faq?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        questions?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "settings_select".
+ */
+export interface SettingsSelect<T extends boolean = true> {
+  siteLogo?: T;
+  siteLogofooter?: T;
+  LinkAssinatura?: T;
+  linkInstagram?: T;
+  linkYoutube?: T;
+  whatsapp?: T;
+  contactEmail?: T;
+  unidades?:
+    | T
+    | {
+        numero?: T;
+        nome?: T;
+        address?: T;
+        openingHours?: T;
+        linkInstagram?: T;
+        linkWhatsapp?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "landing-page_select".
+ */
+export interface LandingPageSelect<T extends boolean = true> {
+  hero?:
+    | T
+    | {
+        title?: T;
+        logo1?: T;
+        logo2?: T;
+        background?: T;
+      };
+  benefitsSection?:
+    | T
+    | {
+        image?: T;
+        description?: T;
+        benefits?:
+          | T
+          | {
+              benefit?: T;
+              id?: T;
+            };
+      };
+  bannerFooter?:
+    | T
+    | {
+        backgroundImage?: T;
+        title?: T;
+        buttonTitle?: T;
+        buttonLink?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Profissionale_select".
+ */
+export interface ProfissionaleSelect<T extends boolean = true> {
+  thumbInfo?:
+    | T
+    | {
+        title?: T;
+        logo?: T;
+        description?: T;
+        image?: T;
+      };
+  buttonText?: T;
+  buttonLink?: T;
+  imageHero?: T;
+  image2?: T;
+  about?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        modules?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+            };
+      };
+  educatorsSection?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        educators?:
+          | T
+          | {
+              name?: T;
+              image?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  modulesSection?:
+    | T
+    | {
+        modules?:
+          | T
+          | {
+              icon?: T;
+              color?: T;
+              type?: T;
+              title?: T;
+              description?: T;
+              description2?: T;
+              image?: T;
+              link?: T;
+              id?: T;
+            };
+      };
+  banner?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        buttonLink?: T;
+        buttonText?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visagismo_select".
+ */
+export interface VisagismoSelect<T extends boolean = true> {
+  thumbInfo?:
+    | T
+    | {
+        title?: T;
+        logo?: T;
+        description?: T;
+        image?: T;
+      };
+  imageHero?: T;
+  sectionAbout?:
+    | T
+    | {
+        description1?: T;
+        benefits?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+            };
+        buttonText?: T;
+        buttonLink?: T;
+      };
+  sectionResults?:
+    | T
+    | {
+        description?: T;
+        items?:
+          | T
+          | {
+              beforeImage?: T;
+              afterImage?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  faq?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        questions?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "servicePage_select".
+ */
+export interface ServicePageSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  services?:
+    | T
+    | {
+        activeHome?: T;
+        image?: T;
+        title?: T;
+        price?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "rimborso_select".
+ */
+export interface RimborsoSelect<T extends boolean = true> {
+  thumbInfo?:
+    | T
+    | {
+        title?: T;
+        logo?: T;
+        description?: T;
+        image?: T;
+      };
+  imageHero?: T;
+  sectionAbout?:
+    | T
+    | {
+        description1?: T;
+        benefits?:
+          | T
+          | {
+              title?: T;
+              id?: T;
+            };
+        buttonText?: T;
+        buttonLink?: T;
+      };
+  pointsAndChanges?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+        items?:
+          | T
+          | {
+              description?: T;
+              points?: T;
+              id?: T;
+            };
+        text1?: T;
+        text2?: T;
+      };
+  howItWorks?:
+    | T
+    | {
+        title?: T;
+        buttonText?: T;
+        buttonLink?: T;
+        items?:
+          | T
+          | {
+              description?: T;
+              id?: T;
+            };
+      };
+  faq?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        questions?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
