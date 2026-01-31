@@ -11,9 +11,23 @@ import { Button } from '@/components/ui/button'
 import { VideoPlayerStatic } from '@/components/video-player-static'
 import { Footer } from '@/components/footer'
 import { BrandSection } from '@/components/brand-section'
+import { generateSeoMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
+
+export async function generateMetadata() {
+  const payload = await getPayload({ config: configPromise })
+  const page = await payload.findGlobal({
+    slug: 'home',
+    depth: 1,
+    select: { seo: true },
+  })
+  return generateSeoMetadata(page, {
+    fallbackTitle: 'Don Manera',
+    fallbackDescription: 'Barbearia Don Manera',
+  })
+}
 
 export default async function HomePage() {
   const payload = await getPayload({ config: configPromise })

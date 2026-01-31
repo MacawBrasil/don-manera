@@ -7,9 +7,23 @@ import Image from 'next/image'
 import { isValidMedia } from '@/lib/media'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
+import { generateSeoMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
+
+export async function generateMetadata() {
+  const payload = await getPayload({ config: configPromise })
+  const page = await payload.findGlobal({
+    slug: 'servicePage',
+    depth: 1,
+    select: { seo: true },
+  })
+  return generateSeoMetadata(page, {
+    fallbackTitle: 'Serviços - Don Manera',
+    fallbackDescription: 'Conheça os serviços da Don Manera',
+  })
+}
 
 export default async function ServicosPage() {
   const payload = await getPayload({ config: configPromise })

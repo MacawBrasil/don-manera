@@ -1,8 +1,10 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const Contato: GlobalConfig = {
   slug: 'contato',
   fields: [
+    seoFields,
     {
       name: 'work',
       label: 'Junte-se a equipe',

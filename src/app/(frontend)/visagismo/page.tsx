@@ -8,9 +8,23 @@ import { RichText } from '@/components/RichText'
 import { Button } from '@/components/ui/button'
 import { Faq } from '@/components/faq'
 import { Footer } from '@/components/footer'
+import { generateSeoMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
+
+export async function generateMetadata() {
+  const payload = await getPayload({ config: configPromise })
+  const page = await payload.findGlobal({
+    slug: 'visagismo',
+    depth: 1,
+    select: { seo: true },
+  })
+  return generateSeoMetadata(page, {
+    fallbackTitle: 'Visagismo - Don Manera',
+    fallbackDescription: 'Serviço de visagismo Don Manera',
+  })
+}
 
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })

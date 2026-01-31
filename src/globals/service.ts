@@ -1,9 +1,11 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const service: GlobalConfig = {
   slug: 'servicePage',
   label: 'Página de Serviços',
   fields: [
+    seoFields,
     {
       name: 'title',
       type: 'richText',

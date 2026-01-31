@@ -1,8 +1,10 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const Home: GlobalConfig = {
   slug: 'home',
   fields: [
+    seoFields,
     {
       name: 'Hero',
       type: 'group',

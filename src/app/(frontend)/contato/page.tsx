@@ -8,9 +8,23 @@ import Image from 'next/image'
 import { isValidMedia } from '@/lib/media'
 import { FormWork } from './formWork'
 import { Footer } from '@/components/footer'
+import { generateSeoMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
+
+export async function generateMetadata() {
+  const payload = await getPayload({ config: configPromise })
+  const page = await payload.findGlobal({
+    slug: 'contato',
+    depth: 1,
+    select: { seo: true },
+  })
+  return generateSeoMetadata(page, {
+    fallbackTitle: 'Contato - Don Manera',
+    fallbackDescription: 'Entre em contato com a Don Manera',
+  })
+}
 
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })

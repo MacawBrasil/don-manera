@@ -1,9 +1,11 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const Profissionale: GlobalConfig = {
   slug: 'Profissionale',
   label: 'Pagina Profissionale',
   fields: [
+    seoFields,
     {
       name: 'thumbInfo',
       type: 'group',

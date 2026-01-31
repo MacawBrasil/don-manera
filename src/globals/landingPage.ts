@@ -1,9 +1,11 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const landingPage: GlobalConfig = {
   slug: 'landing-page',
   label: 'Landing Page',
   fields: [
+    seoFields,
     {
       name: 'hero',
       label: 'Hero',

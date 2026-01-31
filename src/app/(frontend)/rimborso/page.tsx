@@ -8,9 +8,23 @@ import { isValidMedia } from '@/lib/media'
 import { Button } from '@/components/ui/button'
 import { Faq } from '@/components/faq'
 import { Footer } from '@/components/footer'
+import { generateSeoMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
+
+export async function generateMetadata() {
+  const payload = await getPayload({ config: configPromise })
+  const page = await payload.findGlobal({
+    slug: 'rimborso',
+    depth: 1,
+    select: { seo: true },
+  })
+  return generateSeoMetadata(page, {
+    fallbackTitle: 'Rimborso - Don Manera',
+    fallbackDescription: 'Programa de pontos e recompensas Don Manera',
+  })
+}
 
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })

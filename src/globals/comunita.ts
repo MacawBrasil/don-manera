@@ -1,8 +1,10 @@
 import { GlobalConfig } from 'payload'
+import { seoFields } from './seo'
 
 export const comunita: GlobalConfig = {
   slug: 'comunita',
   fields: [
+    seoFields,
     {
       name: 'thumbInfo',
       type: 'group',

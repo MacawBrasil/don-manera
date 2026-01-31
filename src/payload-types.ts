@@ -341,6 +341,24 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Home {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   Hero: {
     slides: {
       slideText?: {
@@ -538,6 +556,24 @@ export interface Home {
  */
 export interface Sobre {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   hero: {
     banner: string | Media;
     titleBanner: string;
@@ -621,6 +657,24 @@ export interface Sobre {
  */
 export interface Contato {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   work: {
     banner: string | Media;
     image: string | Media;
@@ -654,6 +708,24 @@ export interface Contato {
  */
 export interface Comunita {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   thumbInfo: {
     title?: string | null;
     logo?: (string | null) | Media;
@@ -793,6 +865,24 @@ export interface Setting {
  */
 export interface LandingPage {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   hero: {
     title: string;
     logo1?: (string | null) | Media;
@@ -852,6 +942,24 @@ export interface LandingPage {
  */
 export interface Profissionale {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   thumbInfo: {
     title?: string | null;
     logo?: (string | null) | Media;
@@ -1006,6 +1114,24 @@ export interface Profissionale {
  */
 export interface Visagismo {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   thumbInfo: {
     title?: string | null;
     logo?: (string | null) | Media;
@@ -1097,6 +1223,24 @@ export interface Visagismo {
  */
 export interface ServicePage {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   title: {
     root: {
       type: string;
@@ -1143,6 +1287,24 @@ export interface ServicePage {
  */
 export interface Rimborso {
   id: string;
+  seo?: {
+    /**
+     * Título que aparece na aba do navegador e nos resultados de busca
+     */
+    metaTitle?: string | null;
+    /**
+     * Descrição que aparece nos resultados de busca (recomendado: 150-160 caracteres)
+     */
+    metaDescription?: string | null;
+    /**
+     * Imagem que aparece ao compartilhar em redes sociais (recomendado: 1200x630px)
+     */
+    metaImage?: (string | null) | Media;
+    /**
+     * Palavras-chave separadas por vírgula
+     */
+    keywords?: string | null;
+  };
   thumbInfo: {
     title?: string | null;
     logo?: (string | null) | Media;
@@ -1289,6 +1451,14 @@ export interface Rimborso {
  * via the `definition` "home_select".
  */
 export interface HomeSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   Hero?:
     | T
     | {
@@ -1366,6 +1536,14 @@ export interface HomeSelect<T extends boolean = true> {
  * via the `definition` "sobre_select".
  */
 export interface SobreSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   hero?:
     | T
     | {
@@ -1395,6 +1573,14 @@ export interface SobreSelect<T extends boolean = true> {
  * via the `definition` "contato_select".
  */
 export interface ContatoSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   work?:
     | T
     | {
@@ -1418,6 +1604,14 @@ export interface ContatoSelect<T extends boolean = true> {
  * via the `definition` "comunita_select".
  */
 export interface ComunitaSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   thumbInfo?:
     | T
     | {
@@ -1522,6 +1716,14 @@ export interface SettingsSelect<T extends boolean = true> {
  * via the `definition` "landing-page_select".
  */
 export interface LandingPageSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   hero?:
     | T
     | {
@@ -1559,6 +1761,14 @@ export interface LandingPageSelect<T extends boolean = true> {
  * via the `definition` "Profissionale_select".
  */
 export interface ProfissionaleSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   thumbInfo?:
     | T
     | {
@@ -1631,6 +1841,14 @@ export interface ProfissionaleSelect<T extends boolean = true> {
  * via the `definition` "visagismo_select".
  */
 export interface VisagismoSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   thumbInfo?:
     | T
     | {
@@ -1688,6 +1906,14 @@ export interface VisagismoSelect<T extends boolean = true> {
  * via the `definition` "servicePage_select".
  */
 export interface ServicePageSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   title?: T;
   description?: T;
   services?:
@@ -1708,6 +1934,14 @@ export interface ServicePageSelect<T extends boolean = true> {
  * via the `definition` "rimborso_select".
  */
 export interface RimborsoSelect<T extends boolean = true> {
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        metaImage?: T;
+        keywords?: T;
+      };
   thumbInfo?:
     | T
     | {
