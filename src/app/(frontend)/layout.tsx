@@ -43,7 +43,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <body className={cn(intro.variable, openSans.variable)}>
+      <body className={cn(intro.variable, openSans.variable, 'font-intro')}>
         <main>{children}</main>
         <Toaster />
       </body>

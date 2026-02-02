@@ -35,7 +35,7 @@ export function Navbar({ settings }: NavbarProps) {
             <Link
               key={item.id}
               href={item.href}
-              className="text-barbershop-tan font-opensans text-sm text-[#D9CCB2] xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
+              className=" font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
             >
               {item.label}
             </Link>
@@ -59,7 +59,7 @@ export function Navbar({ settings }: NavbarProps) {
             <a
               key={item.id}
               href={item.href}
-              className="text-barbershop-tan text-sm text-[#D9CCB2] xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
+              className="text-sm font-open-sans  text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
             >
               {item.label}
             </a>

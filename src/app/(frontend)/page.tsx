@@ -12,11 +12,12 @@ import { VideoPlayerStatic } from '@/components/video-player-static'
 import { Footer } from '@/components/footer'
 import { BrandSection } from '@/components/brand-section'
 import { generateSeoMetadata } from '@/lib/seo'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const payload = await getPayload({ config: configPromise })
   const page = await payload.findGlobal({
     slug: 'home',
@@ -171,7 +172,7 @@ export default async function HomePage() {
               <div className="w-full h-full inset-0 bg-terra rounded-2xl pt-18.25 pl-25.75 flex flex-col gap-5 max-[769px]:pt-0 max-[769px]:pl-0 max-[769px]:items-center max-[769px]:justify-center max-[769px]:text-center">
                 <RichText
                   data={page.benefitsSection.title}
-                  className="text-bege font-intro text-5xl font-light leading-11.25 max-[769px]:text-3xl max-[769px]:leading-8"
+                  className="text-bege text-5xl font-light leading-11.25 max-[769px]:text-3xl max-[769px]:leading-8"
                 />
                 <p className="text-bege text-lg font-intro max-w-89.25 leading-6 font-light max-[769px]:text-base">
                   {page.benefitsSection.description}

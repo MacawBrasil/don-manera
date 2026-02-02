@@ -9,11 +9,12 @@ import { Button } from '@/components/ui/button'
 import { Faq } from '@/components/faq'
 import { Footer } from '@/components/footer'
 import { generateSeoMetadata } from '@/lib/seo'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const payload = await getPayload({ config: configPromise })
   const page = await payload.findGlobal({
     slug: 'rimborso',

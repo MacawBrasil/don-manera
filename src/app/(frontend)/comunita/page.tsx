@@ -10,11 +10,12 @@ import { Button } from '@/components/ui/button'
 import { PlansSection } from '@/components/plans-section'
 import { Faq } from '@/components/faq'
 import { generateSeoMetadata } from '@/lib/seo'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const payload = await getPayload({ config: configPromise })
   const page = await payload.findGlobal({
     slug: 'comunita',

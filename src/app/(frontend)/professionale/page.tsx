@@ -14,11 +14,12 @@ import {
 } from '@/components/ui/accordion'
 import { Footer } from '@/components/footer'
 import { generateSeoMetadata } from '@/lib/seo'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const payload = await getPayload({ config: configPromise })
   const page = await payload.findGlobal({
     slug: 'Profissionale',
@@ -113,7 +114,7 @@ export default async function Page() {
         <Container className="pl-20! grid grid-cols-2 gap-28 mt-40 max-[769px]:mt-0 max-[769px]:pl-8! max-[601px]:grid-cols-1 max-[601px]:gap-10">
           <RichText
             data={page.about.title}
-            className="text-white font-intro text-5xl leading-11 [&_strong]:font-bold max-[769px]:text-3xl  max-[769px]:leading-8"
+            className="text-white font-intro text-5xl font-normal leading-11 [&_strong]:font-bold max-[769px]:text-3xl  max-[769px]:leading-8"
           />
           <div>
             <RichText
@@ -239,25 +240,27 @@ export default async function Page() {
                     {module.description}
                   </p>
                 </AccordionTrigger>
-                <AccordionContent className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
-                  <div className="relative w-full h-90.75">
-                    <Image
-                      src={isValidMedia(module.image) ? module.image.url! : '/default-image.jpg'}
-                      fill
-                      alt=""
-                      className="object-cover rounded-[30px]"
-                    />
-                  </div>
-                  <div>
-                    <RichText
-                      data={module.description2}
-                      className="max-w-129.25 text-white text-lg leading-6 font-intro max-[850px]:max-w-full"
-                    />
-                    <a href={module.link} target="_blank" rel="noopener noreferrer">
-                      <Button variant={'primary'} className="mt-10">
-                        Saiba mais
-                      </Button>
-                    </a>
+                <AccordionContent>
+                  <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
+                    <div className="relative w-full h-90.75">
+                      <Image
+                        src={isValidMedia(module.image) ? module.image.url! : '/default-image.jpg'}
+                        fill
+                        alt=""
+                        className="object-cover rounded-[30px]"
+                      />
+                    </div>
+                    <div className="w-full">
+                      <RichText
+                        data={module.description2}
+                        className="max-w-129.25 text-white text-lg leading-6 font-intro max-[850px]:max-w-full"
+                      />
+                      <a href={module.link} target="_blank" rel="noopener noreferrer">
+                        <Button variant={'primary'} className="mt-10">
+                          Saiba mais
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>

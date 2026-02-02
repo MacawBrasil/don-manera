@@ -107,7 +107,7 @@ export function PlansSection({ description, plans }: PlansSectionProps) {
                         <a
                           href={price.price.link}
                           target="_blank"
-                          className="min-w-40 px-8 flex items-center justify-center py-3 bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-lg hover:bg-[#D9CCB2]/10 transition-colors"
+                          className="min-w-40 h-11.25 px-8 flex items-center justify-center py-3 bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-lg hover:bg-[#D9CCB2]/10 transition-colors"
                         >
                           Assinar
                         </a>

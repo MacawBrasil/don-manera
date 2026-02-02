@@ -8,11 +8,12 @@ import { BrandSection } from '@/components/brand-section'
 import { RichText } from '@/components/RichText'
 import { Button } from '@/components/ui/button'
 import { generateSeoMetadata } from '@/lib/seo'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const payload = await getPayload({ config: configPromise })
   const page = await payload.findGlobal({
     slug: 'landing-page',
