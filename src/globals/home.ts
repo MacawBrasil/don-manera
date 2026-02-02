@@ -1,8 +1,12 @@
 import { GlobalConfig } from 'payload'
 import { seoFields } from './seo'
+import { revalidateAfterChange } from '@/hooks/revalidate'
 
 export const Home: GlobalConfig = {
   slug: 'home',
+  hooks: {
+    afterChange: [revalidateAfterChange],
+  },
   fields: [
     seoFields,
     {

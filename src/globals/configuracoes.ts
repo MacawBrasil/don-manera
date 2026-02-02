@@ -1,7 +1,11 @@
 import { GlobalConfig } from 'payload'
+import { revalidateAfterChange } from '@/hooks/revalidate'
 
 export const Settings: GlobalConfig = {
   slug: 'settings',
+  hooks: {
+    afterChange: [revalidateAfterChange],
+  },
   fields: [
     {
       name: 'siteLogo',
