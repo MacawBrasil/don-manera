@@ -95,7 +95,12 @@ export default async function Page() {
                     </li>
                   ))}
                 </ul>
-                <a href={page.sectionAbout.buttonLink} className="text-white font-bold">
+                <a
+                  href={page.sectionAbout.buttonLink}
+                  className="text-white font-bold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button variant={'primary'} className="mt-14">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

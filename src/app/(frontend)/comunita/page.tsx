@@ -62,7 +62,12 @@ export default async function Page() {
                 className="font-intro text-lg text-white leading-6 [&_strong]:font-bold"
               />
 
-              <a href={page.sectionAbout.buttonLink} className="text-white font-bold">
+              <a
+                href={page.sectionAbout.buttonLink}
+                className="text-white font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant={'primary'} className="mt-28">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

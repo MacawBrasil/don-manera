@@ -79,7 +79,11 @@ export default async function Page() {
               alt=""
             />
 
-            <a href="https://wa.me/">
+            <a
+              href={`https://wa.me/${settings.whatsapp}?text=Gostaria de saber mais sobre Manera Professionale.`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant={'primary'}
                 className="max-[601px]:text-base max-[601px]:min-w-fit max-[601px]:p-4 max-[321px]:text-sm"

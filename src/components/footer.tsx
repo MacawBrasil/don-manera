@@ -60,7 +60,10 @@ export function Footer({ data, padding }: FooterProps) {
                   data={unidade.address}
                   className="mt-3 text-[#151515] font-intro text-lg font-normal min-h-28 leading-5 max-[901px]:min-h-0 max-[901px]:mb-4"
                 />
-                <a href={''} className="mt-7">
+                <a
+                  href={`https://wa.me/${unidade.linkWhatsapp}?text=Olá, gostaria de saber mais sobre os serviços da Unidade ${unidade.nome}`}
+                  className="mt-7"
+                >
                   <Button
                     variant={'primary'}
                     className="border-terra hover:bg-terra min-w-full group"
@@ -91,7 +94,7 @@ export function Footer({ data, padding }: FooterProps) {
             ))}
           </div>
 
-          <div className="flex space-x-5">
+          <div className="flex flex-row space-x-5 items-center h-fit">
             <a href={data.linkInstagram!} target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

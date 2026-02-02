@@ -139,9 +139,13 @@ export default async function HomePage() {
           </div>
 
           <div className="mt-12 flex items-center gap-5 max-[600px]:flex-col max-[601px]:items-start">
-            <Link href={''}>
+            <a
+              href={`https://wa.me/${settings.whatsapp}?text=Olá, gostaria de agendar um serviço.`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <Button variant={'terra'}>Agende agora</Button>
-            </Link>
+            </a>
             <Link href={'/servicos'}>
               <Button
                 variant={'primary'}
