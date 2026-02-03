@@ -44,20 +44,20 @@ export default async function ServicosPage() {
       <div className="w-full bg-terra pb-52.5">
         <Navbar settings={settings} />
 
-        <Container className="pt-59.25 max-[600px]:pt-48">
+        <Container className="pt-49.25">
           <div className="w-full flex justify-between max-[1280px]:flex-col max-[1280px]:gap-10">
             <RichText
               data={page.title}
-              className="text-bege text-6xl font-intro [&_strong]:font-bold max-w-150 max-[768px]:text-4xl"
+              className="text-bege text-6xl font-intro [&_strong]:font-bold max-w-150 max-[769px]:text-4xl"
             />
 
             <RichText
               data={page.description}
-              className="text-bege text-lg font-intro [&_strong]:font-bold leading-6 max-w-140.5 max-[768px]:text-base"
+              className="text-bege text-lg font-intro [&_strong]:font-bold leading-6 max-w-140.5 max-[769px]:text-base"
             />
           </div>
 
-          <div className="mt-28 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-28 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {page.services.map((service) => (
               <div
                 key={service.id}

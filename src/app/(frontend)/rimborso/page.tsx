@@ -43,7 +43,7 @@ export default async function Page() {
   return (
     <div className="w-full bg-terra">
       <Navbar settings={settings} />
-      <Container className="pt-68 max-[600px]:pt-48 pb-28">
+      <Container className="pt-49.25 max-[600px]:pt-48 pb-28">
         <div className="relative w-full h-90">
           <Image
             src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.jpg'}

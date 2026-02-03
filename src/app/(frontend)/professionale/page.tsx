@@ -206,11 +206,11 @@ export default async function Page() {
                 value={module.id!}
                 className="border-b-0 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-linear-30 before:from-black before:to-[#7B7B7B] before:to-30% before:rounded-full"
               >
-                <AccordionTrigger className="grid grid-cols-2 min-h-44.25 items-center max-[850px]:grid-cols-1 max-[850px]:h-fit">
-                  <div className="flex items-center gap-16 max-[850px]:flex-col max-[850px]:items-start max-[850px]:gap-10  ">
+                <AccordionTrigger className="grid grid-cols-2 min-h-44.25 items-center max-[850px]:h-fit">
+                  <div className="flex items-center gap-16 max-[850px]:col-span-2 max-[500px]:gap-4 max-[500px]:flex-col max-[500px]:items-start">
                     <div className="flex flex-col gap-7">
                       <RichText
-                        data={module.title}
+                        data={module.type}
                         className="text-white font-intro text-xl font-light leading-6"
                       />
                       <div
@@ -224,7 +224,7 @@ export default async function Page() {
                       <RichText
                         data={module.title}
                         style={{ color: module.color }}
-                        className="font-intro text-5xl leading-12 max-[1280px]:text-4xl"
+                        className="font-intro text-5xl max-[1280px]:text-4xl max-[768px]:text-3xl max-[500px]:text-2xl"
                       />
 
                       <div
@@ -240,7 +240,7 @@ export default async function Page() {
                       </div>
                     </div>
                   </div>
-                  <p className="max-w-129.25 text-white text-lg leading-6 font-intro max-[1280px]:max-w-112.5 max-[1060px]:max-w-83 max-[850px]:max-w-full">
+                  <p className="max-w-129.25 text-white text-lg leading-6 font-intro max-[1280px]:max-w-112.5 max-[1060px]:max-w-83 max-[850px]:max-w-full max-[850px]:col-span-2">
                     {module.description}
                   </p>
                 </AccordionTrigger>
@@ -279,7 +279,7 @@ export default async function Page() {
             alt=""
             className="object-cover rounded-[45px]"
           />
-          <div className="absolute top-1/2 -translate-1/2 left-1/2 z-10 w-full flex items-center justify-around max-[768px]:flex-col max-[768px]:gap-5 max-[768px]:p-4">
+          <div className="absolute top-1/2 -translate-1/2 left-1/2 z-10 w-full flex items-center justify-around max-[768px]:flex-col max-[768px]:gap-5 max-[768px]:p-4 max-[768px]:items-start">
             <p className="font-intro text-5xl font-bold text-white leading-12 max-[769px]:text-3xl max-[769px]:leading-8 max-w-100">
               {page.banner.title}
             </p>

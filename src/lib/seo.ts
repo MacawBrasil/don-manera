@@ -21,7 +21,7 @@ type GenerateMetadataOptions = {
  */
 export function generateSeoMetadata(
   data: SEOData,
-  options: GenerateMetadataOptions = {}
+  options: GenerateMetadataOptions = {},
 ): Metadata {
   const { fallbackTitle = 'Don Manera', fallbackDescription = '' } = options
   const seo = data?.seo
@@ -31,6 +31,7 @@ export function generateSeoMetadata(
   const keywords = seo?.keywords || undefined
 
   const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'),
     title,
     description,
     keywords,

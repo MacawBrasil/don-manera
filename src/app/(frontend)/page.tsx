@@ -239,7 +239,7 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="flex items-center justify-between mt-35.75 max-[769px]:mt-20 relative max-[1281px]:grid max-[1281px]:grid-cols-2 max-[1281px]:gap-6 max-[768px]:grid max-[768px]:grid-cols-1 max-[769px]:gap-6">
+          <div className="flex items-center justify-between mt-35.75 max-[769px]:mt-20 relative max-[1281px]:grid max-[1281px]:grid-cols-2 max-[1281px]:gap-6 max-[769px]:grid max-[769px]:gap-6">
             <Link
               href={'/comunita'}
               className="relative w-105.25 h-149 rounded-4xl overflow-hidden group z-10 max-[1281px]:order-2 max-[1281px]:w-full max-[769px]:h-105"
@@ -295,7 +295,7 @@ export default async function HomePage() {
               </div>
             </Link>
 
-            <div className="h-96 w-176.25 absolute top-1/2 -translate-1/2 left-1/2 rounded-2xl p-0.5 bg-linear-to-tl from-bege via-terra via-45% to-[#6E2D39] max-[1281px]:static max-[1281px]:top-0 max-[1281px]:left-0 max-[1281px]:translate-0 max-[1281px]:col-span-2 max-[1281px]:mx-auto max-[1025px]:w-full max-[769px]:col-span-1">
+            <div className="h-96 w-176.25 absolute top-1/2 -translate-1/2 left-1/2 rounded-2xl p-0.5 bg-linear-to-tl from-bege via-terra via-45% to-[#6E2D39] max-[1281px]:static max-[1281px]:top-0 max-[1281px]:left-0 max-[1281px]:translate-0 max-[1281px]:col-span-2 max-[1281px]:mx-auto max-[1025px]:w-full">
               <div className="w-full h-full inset-0 bg-terra rounded-2xl text-center flex flex-col gap-5 items-center justify-center">
                 <RichText
                   data={page.differencesSection.title}
@@ -457,7 +457,7 @@ export default async function HomePage() {
       </div>
 
       <div className="w-full bg-terra pt-20 max-[1025px]:pb-20">
-        <Container className="flex items-center justify-between max-[769px]:flex-col">
+        <Container className="flex items-center justify-between max-[769px]:flex-col max-[769px]:items-start">
           <div className="max-w-83.5">
             <RichText
               data={page.appSection.title}

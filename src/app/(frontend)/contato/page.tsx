@@ -44,13 +44,13 @@ export default async function Page() {
     <>
       <div className="w-full bg-terra max-[769px]:pb-10">
         <Navbar settings={settings} />
-        <Container className="pt-59.25 max-[600px]:pt-48">
+        <Container className="pt-49.25">
           <div>
             <span className="text-white font-intro text-5xl leading-11 font-thin max-[769px]:text-3xl max-[769px]:leading-8">
               Vamos <strong>falar</strong> <br /> <strong>um pouco?</strong>
             </span>
 
-            <div className="mt-20 flex gap-22.5 max-[769px]:flex-col">
+            <div className="mt-20 flex gap-22.5 max-[769px]:flex-col max-[769px]:mt-10">
               <FormContact />
 
               <div className="bg-bege px-12 py-16 rounded-[40px] translate-y-10 max-[769px]:translate-0">
@@ -140,7 +140,7 @@ export default async function Page() {
       </div>
 
       <Container className="mt-83 flex items-center flex-col pb-38.25 max-[1280px]:mt-20">
-        <div className="relative w-full h-68 flex items-center pl-35.75 max-[769px]:pl-3">
+        <div className="relative w-full h-68 flex items-center pl-35.75 max-[769px]:pl-10">
           <Image
             src={isValidMedia(page.work.banner) ? page.work.banner.url! : ''}
             fill

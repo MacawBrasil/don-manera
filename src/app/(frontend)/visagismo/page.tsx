@@ -45,7 +45,7 @@ export default async function Page() {
       <div className="w-full bg-[#292829]">
         <Navbar settings={settings} />
 
-        <Container className="pt-68 max-[600px]:pt-48 pb-28">
+        <Container className="pt-49.25 max-[600px]:pt-48 pb-28">
           <div className="w-full pl-20 max-[1280px]:pl-0">
             <div className="w-full flex justify-between max-[1280px]:gap-10 max-[768px]:flex-col max-[768px]:items-center">
               {isValidMedia(page.thumbInfo.logo) && (

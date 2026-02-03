@@ -52,7 +52,7 @@ export function Footer({ data, padding }: FooterProps) {
             </ul>
           </div>
 
-          <div className="flex space-x-10 max-[601px]:flex-col max-[601px]:space-y-10 max-[901px]:items-center max-[901px]:space-x-0">
+          <div className="flex gap-10 max-[601px]:flex-col max-[601px]:space-y-10 max-[901px]:items-center max-[901px]:space-x-0">
             {data.unidades?.map((unidade, index) => (
               <div key={index} className="max-w-50 max-[901px]:flex-col">
                 <span className="text-terra font-intro font-bold">Unidade {unidade.nome}</span>

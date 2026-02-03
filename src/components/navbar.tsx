@@ -94,7 +94,7 @@ export function Navbar({ settings }: NavbarProps) {
           ))}
           <a
             href={settings.LinkAssinatura}
-            className="px-4 xl:px-6 py-2 bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-sm xl:text-base whitespace-nowrap hover:bg-[#D9CCB2]/10 transition-colors"
+            className="px-4 xl:px-6 py-2 bg-transparent font-open-sans font-bold border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-sm xl:text-lg whitespace-nowrap hover:bg-[#D9CCB2]/10 transition-colors"
           >
             Assinatura
           </a>
@@ -105,7 +105,7 @@ export function Navbar({ settings }: NavbarProps) {
           href={settings.LinkAssinatura}
           rel="noopener noreferrer"
           target="_blank"
-          className="lg:hidden justify-self-end px-3 py-1.5 bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-xs sm:text-sm whitespace-nowrap"
+          className="lg:hidden justify-self-end px-3 py-1.5 font-bold font-open-sans bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-xs sm:text-sm whitespace-nowrap"
         >
           Assinatura
         </a>
