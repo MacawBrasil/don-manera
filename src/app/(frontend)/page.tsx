@@ -93,7 +93,7 @@ export default async function HomePage() {
             src={
               isValidMedia(page.exclusiveServices.image)
                 ? page.exclusiveServices.image.url!
-                : '/hero.png'
+                : '/default-image.png'
             }
             alt="Banner Image"
             fill
@@ -120,7 +120,7 @@ export default async function HomePage() {
               >
                 <div className="relative w-full h-23.75 rounded-[30px] overflow-hidden transition-all duration-300 group-hover:h-61.5 max-[1000px]:group-hover:h-52 max-[1000px]:h-52">
                   <Image
-                    src={isValidMedia(service.image) ? service.image.url! : '/hero.png'}
+                    src={isValidMedia(service.image) ? service.image.url! : '/default-image.png'}
                     alt="Service Image"
                     fill
                     className="object-cover"
@@ -191,7 +191,7 @@ export default async function HomePage() {
                 src={
                   isValidMedia(rimborso.thumbInfo.image)
                     ? rimborso.thumbInfo.image.url!
-                    : '/hero.png'
+                    : '/default-image.png'
                 }
                 fill
                 alt="Thumb Rimborso"
@@ -248,7 +248,7 @@ export default async function HomePage() {
                 src={
                   isValidMedia(comunita.thumbInfo.image)
                     ? comunita.thumbInfo.image.url!
-                    : '/hero.png'
+                    : '/default-image.png'
                 }
                 fill
                 alt="Thumb Rimborso"
@@ -315,7 +315,7 @@ export default async function HomePage() {
                 src={
                   isValidMedia(visagismo.thumbInfo.image)
                     ? visagismo.thumbInfo.image.url!
-                    : '/hero.png'
+                    : '/default-image.png'
                 }
                 fill
                 alt="Thumb Rimborso"
@@ -377,7 +377,7 @@ export default async function HomePage() {
                 src={
                   isValidMedia(profissionale.thumbInfo.image)
                     ? profissionale.thumbInfo.image.url!
-                    : '/hero.png'
+                    : '/default-image.png'
                 }
                 fill
                 alt="Thumb Rimborso"
@@ -433,7 +433,7 @@ export default async function HomePage() {
             src={
               isValidMedia(page.subscriptionBanner.image)
                 ? page.subscriptionBanner.image.url!
-                : '/hero.png'
+                : '/default-image.png'
             }
             alt="Banner Image"
             fill
@@ -471,7 +471,11 @@ export default async function HomePage() {
 
           <div className="relative w-145.25 h-156 translate-y-16 max-[1025px]:hidden">
             <Image
-              src={isValidMedia(page.appSection.image) ? page.appSection.image.url! : '/hero.png'}
+              src={
+                isValidMedia(page.appSection.image)
+                  ? page.appSection.image.url!
+                  : '/default-image.png'
+              }
               fill
               alt=""
               className="object-contain"

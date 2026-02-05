@@ -56,9 +56,12 @@ export function Hero({ data, settings }: HeroProps) {
               <div className="w-full h-230 relative max-[769px]:h-192 max-[601px]:h-160">
                 <div className="absolute inset-0 w-full h-full z-10" key={index}>
                   <Image
-                    src={isValidMedia(slide.slideImage) ? slide.slideImage.url! : '/hero.png'}
+                    src={
+                      isValidMedia(slide.slideImage) ? slide.slideImage.url! : '/default-image.png'
+                    }
                     alt="Don Manera Barbershop Interior"
                     fill
+                    priority
                     className="object-top object-cover bg-blend-lighten"
                   />
                   <div className="absolute inset-0 bg-black/40"></div>

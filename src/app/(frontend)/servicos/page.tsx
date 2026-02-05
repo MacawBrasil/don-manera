@@ -65,7 +65,7 @@ export default async function ServicosPage() {
               >
                 <div className="relative w-full h-57.5 rounded-[30px] overflow-hidden ">
                   <Image
-                    src={isValidMedia(service.image) ? service.image.url! : '/hero.png'}
+                    src={isValidMedia(service.image) ? service.image.url! : '/default-image.png'}
                     alt="Service Image"
                     fill
                     className="object-cover"

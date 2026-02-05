@@ -64,6 +64,7 @@ export default async function Page() {
           fill
           alt=""
           quality={100}
+          priority
           className="object-cover -z-10"
         />
 
@@ -73,6 +74,7 @@ export default async function Page() {
             width={365}
             height={238}
             alt=""
+            priority
             quality={100}
             className="object-contain max-[1024px]:w-72 max-[768px]:w-56 max-[640px]:w-48"
           />
@@ -80,6 +82,7 @@ export default async function Page() {
           <Image
             src={isValidMedia(page.hero.logo2) ? page.hero.logo2.url! : '/default-image.png'}
             width={386}
+            priority
             height={169}
             alt=""
             quality={100}

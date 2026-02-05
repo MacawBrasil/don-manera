@@ -49,7 +49,7 @@ export function BrandSection({
       >
         <div className="relative w-207 h-109 max-[1525px]:w-11/12 z-30">
           <Image
-            src={isValidMedia(bannerGroup.image1) ? bannerGroup.image1.url! : '/hero.png'}
+            src={isValidMedia(bannerGroup.image1) ? bannerGroup.image1.url! : '/default-image.png'}
             fill
             alt="Brand Image"
             className="object-cover max-[768px]:rounded-[30px]"
@@ -57,7 +57,7 @@ export function BrandSection({
         </div>
         <div className="relative w-207 h-109 max-[1525px]:w-11/12">
           <Image
-            src={isValidMedia(bannerGroup.image2) ? bannerGroup.image2.url! : '/hero.png'}
+            src={isValidMedia(bannerGroup.image2) ? bannerGroup.image2.url! : '/default-image.png'}
             fill
             alt="Brand Image"
             className="object-cover rounded-r-[30px] max-[768px]:rounded-[30px]"
@@ -74,7 +74,9 @@ export function BrandSection({
         <Container className="z-40 flex gap-14 -mt-9 justify-between ml-14 max-[600px]:mt-0 max-[600px]:ml-0">
           <div className="relative w-162.5 h-213 max-[1335px]:w-135 max-[1335px]:h-160 max-[1225px]:w-110 -mt-32 max-[1125px]:hidden">
             <Image
-              src={isValidMedia(brandSection.image) ? brandSection.image.url! : '/hero.png'}
+              src={
+                isValidMedia(brandSection.image) ? brandSection.image.url! : '/default-image.png'
+              }
               fill
               alt="Brand Image"
               className="object-contain z-10"

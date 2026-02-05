@@ -46,18 +46,22 @@ export default async function Page() {
       <Container className="pt-49.25 max-[600px]:pt-48 pb-28">
         <div className="relative w-full h-90">
           <Image
-            src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.jpg'}
+            src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.png'}
             fill
+            priority
+            quality={100}
             alt=""
             className="object-cover rounded-[30px]"
           />
 
           <Image
             src={
-              isValidMedia(page.thumbInfo.logo) ? page.thumbInfo.logo.url! : '/default-image.jpg'
+              isValidMedia(page.thumbInfo.logo) ? page.thumbInfo.logo.url! : '/default-image.png'
             }
             width={317}
             height={64}
+            priority
+            quality={100}
             alt=""
             className="object-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           />

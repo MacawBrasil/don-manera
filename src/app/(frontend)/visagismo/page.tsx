@@ -49,7 +49,14 @@ export default async function Page() {
           <div className="w-full pl-20 max-[1280px]:pl-0">
             <div className="w-full flex justify-between max-[1280px]:gap-10 max-[768px]:flex-col max-[768px]:items-center">
               {isValidMedia(page.thumbInfo.logo) && (
-                <Image src={page.thumbInfo.logo.url!} width={325} height={144} alt="" />
+                <Image
+                  src={page.thumbInfo.logo.url!}
+                  priority
+                  quality={100}
+                  width={325}
+                  height={144}
+                  alt=""
+                />
               )}
 
               <div className="relative w-201.5 h-90 max-[1280px]:w-full">
@@ -57,6 +64,8 @@ export default async function Page() {
                   src={isValidMedia(page.imageHero) ? page.imageHero.url! : ''}
                   fill
                   alt=""
+                  priority
+                  quality={100}
                   className="rounded-[30px] object-cover max-[1024px]:object-left"
                 />
               </div>

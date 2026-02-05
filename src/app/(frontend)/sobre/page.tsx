@@ -47,6 +47,8 @@ export default async function Page() {
           src={isValidMedia(page.hero.banner) ? page.hero.banner.url! : '/default-image.png'}
           fill
           alt=""
+          priority
+          quality={100}
           className="object-cover"
         />
 
@@ -73,6 +75,8 @@ export default async function Page() {
             src={isValidMedia(page.image) ? page.image.url! : '/default-image.png'}
             fill
             alt=""
+            priority
+            quality={100}
             className="object-cover rounded-l-[30px] max-[1025px]:rounded-[30px]"
           />
         </div>

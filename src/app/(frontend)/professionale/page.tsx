@@ -55,15 +55,17 @@ export default async function Page() {
         <Container className="h-127.5 pt-49.25 flex justify-between max-[1025px]:grid max-[1025px]:grid-cols-2 max-[601px]:gap-10 max-[1025px]:h-fit max-[1025px]:pb-20 max-[601px]:grid-cols-1">
           <div className="relative w-170 h-90 max-[1200px]:w-140 max-[1025px]:w-full max-[601px]:order-2">
             <Image
-              src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/hero.png'}
+              src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.png'}
               fill
               alt=""
+              priority
+              quality={100}
               className="object-cover rounded-[30px]"
             />
 
             <div className="absolute -right-35 -top-16 w-77.75 h-127.5 z-10 max-[1025px]:hidden">
               <Image
-                src={isValidMedia(page.image2) ? page.image2.url! : '/hero.png'}
+                src={isValidMedia(page.image2) ? page.image2.url! : '/default-image.png'}
                 fill
                 alt=""
                 className="object-contain z-10"
@@ -178,7 +180,7 @@ export default async function Page() {
               >
                 <div className="relative w-full h-80.5">
                   <Image
-                    src={isValidMedia(educator.image) ? educator.image.url! : '/default-image.jpg'}
+                    src={isValidMedia(educator.image) ? educator.image.url! : '/default-image.png'}
                     alt={educator.name}
                     fill
                     className="rounded-[31px] object-cover"
@@ -248,7 +250,7 @@ export default async function Page() {
                   <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
                     <div className="relative w-full h-90.75">
                       <Image
-                        src={isValidMedia(module.image) ? module.image.url! : '/default-image.jpg'}
+                        src={isValidMedia(module.image) ? module.image.url! : '/default-image.png'}
                         fill
                         alt=""
                         className="object-cover rounded-[30px]"
@@ -274,7 +276,7 @@ export default async function Page() {
 
         <div className="relative h-68 w-11/12 mx-auto max-w-340 mt-28">
           <Image
-            src={isValidMedia(page.banner.image) ? page.banner.image.url! : '/default-image.jpg'}
+            src={isValidMedia(page.banner.image) ? page.banner.image.url! : '/default-image.png'}
             fill
             alt=""
             className="object-cover rounded-[45px]"

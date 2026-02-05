@@ -48,9 +48,10 @@ export default async function Page() {
         <Container className="pt-49.25 max-[600px]:pt-30">
           <div className="relative w-full h-90">
             <Image
-              src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.jpg'}
+              src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.png'}
               fill
               alt=""
+              priority
               className="object-cover rounded-[30px]"
             />
           </div>
