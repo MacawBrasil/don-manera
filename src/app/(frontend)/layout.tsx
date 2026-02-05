@@ -5,11 +5,6 @@ import localFont from 'next/font/local'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/sonner'
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
-}
-
 const openSans = Open_Sans({ subsets: ['latin'], style: 'normal', variable: '--font-open-sans' })
 
 const intro = localFont({
@@ -42,7 +37,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={cn(intro.variable, openSans.variable, 'font-intro')}>
         <main>{children}</main>
         <Toaster />
