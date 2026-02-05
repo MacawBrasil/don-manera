@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Container } from './container'
 import Link from 'next/link'
 import { Setting } from '@/payload-types'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface NavbarProps {
   settings: Setting
@@ -26,94 +26,22 @@ export const rightMenuItems = [
 
 export function Navbar({ settings }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <nav className="absolute z-20 top-0 w-full pt-5">
-      <Container className="grid grid-cols-3 items-center">
-        {/* Menu Esquerdo */}
-        <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 2xl:gap-12">
-          {leftMenuItems.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Botão Menu Mobile (esquerda) */}
-        <button
-          className="lg:hidden justify-self-start text-bege z-20"
-          aria-label="Menu"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {mobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-
-        {/* Logo Central */}
-        <div className="justify-self-center">
-          {isValidMedia(settings.siteLogo) && (
-            <Image
-              src={settings.siteLogo.url!}
-              width={settings.siteLogo.width!}
-              height={settings.siteLogo.height!}
-              alt="Don Manera Logo"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
-            />
-          )}
-        </div>
-
-        {/* Menu Direito + Botão Assinatura */}
-        <div className="hidden lg:flex items-center justify-start gap-4 xl:gap-6 2xl:gap-10">
-          {rightMenuItems.map((item) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <a
-            href={settings.LinkAssinatura}
-            className="px-4 xl:px-6 py-2 bg-transparent font-open-sans font-bold border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-sm xl:text-lg whitespace-nowrap hover:bg-[#D9CCB2]/10 transition-colors"
-          >
-            Assinatura
-          </a>
-        </div>
-
-        {/* Botão Assinatura Mobile (direita) */}
-        <a
-          href={settings.LinkAssinatura}
-          rel="noopener noreferrer"
-          target="_blank"
-          className="lg:hidden justify-self-end px-3 py-1.5 font-bold font-open-sans bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-xs sm:text-sm whitespace-nowrap"
-        >
-          Assinatura
-        </a>
-      </Container>
-
-      {/* Mobile Menu */}
+    <>
+      {/* Mobile Menu - fora do nav para funcionar corretamente com fixed */}
       <div
-        className={`lg:hidden fixed inset-0 z-10 bg-[#1a1a1a]/95 transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 z-40 bg-[#1a1a1a]/95 transition-opacity duration-300 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -133,14 +61,14 @@ export function Navbar({ settings }: NavbarProps) {
             </Link>
           ))}
           {rightMenuItems.map((item) => (
-            <a
+            <Link
               key={item.id}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
               className="text-[#D9CCB2] text-xl font-opensans hover:opacity-80 transition-opacity"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <a
             href={settings.LinkAssinatura}
@@ -151,6 +79,94 @@ export function Navbar({ settings }: NavbarProps) {
           </a>
         </div>
       </div>
-    </nav>
+
+      <nav
+        className={`fixed z-50 top-0 w-full transition-all duration-300 ${
+          scrolled ? 'bg-[#1a1a1a]/95 backdrop-blur-sm py-3' : 'bg-transparent pt-5'
+        }`}
+      >
+        <Container className="grid grid-cols-3 items-center">
+          {/* Menu Esquerdo */}
+          <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 2xl:gap-12">
+            {leftMenuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Botão Menu Mobile (esquerda) */}
+          <button
+            className="lg:hidden justify-self-start text-bege z-50"
+            aria-label="Menu"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+
+          {/* Logo Central */}
+          <div className="justify-self-center">
+            {isValidMedia(settings.siteLogo) && (
+              <Image
+                src={settings.siteLogo.url!}
+                width={settings.siteLogo.width!}
+                height={settings.siteLogo.height!}
+                alt="Don Manera Logo"
+                className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
+              />
+            )}
+          </div>
+
+          {/* Menu Direito + Botão Assinatura */}
+          <div className="hidden lg:flex items-center justify-start gap-4 xl:gap-6 2xl:gap-10">
+            {rightMenuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href={settings.LinkAssinatura}
+              className="px-4 xl:px-6 py-2 bg-transparent font-open-sans font-bold border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-sm xl:text-lg whitespace-nowrap hover:bg-[#D9CCB2]/10 transition-colors"
+            >
+              Assinatura
+            </a>
+          </div>
+
+          {/* Botão Assinatura Mobile (direita) */}
+          <a
+            href={settings.LinkAssinatura}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="lg:hidden justify-self-end px-3 py-1.5 font-bold font-open-sans bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-xs sm:text-sm whitespace-nowrap"
+          >
+            Assinatura
+          </a>
+        </Container>
+      </nav>
+    </>
   )
 }

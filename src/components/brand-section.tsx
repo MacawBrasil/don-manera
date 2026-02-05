@@ -44,7 +44,7 @@ export function BrandSection({
       <div
         className={cn(
           'w-full max-w-377.5 flex items-center max-[768px]:flex-col max-[768px]:gap-y-10',
-          absolute && 'absolute left-0 -top-28 z-20 max-[768px]:static',
+          absolute && 'absolute left-0 -top-28 z-10 max-[768px]:static',
         )}
       >
         <div className="relative w-207 h-109 max-[1525px]:w-11/12 z-30">
@@ -71,7 +71,7 @@ export function BrandSection({
           absolute && 'pt-80 max-[768px]:pt-0',
         )}
       >
-        <Container className="z-40 flex gap-14 -mt-9 justify-between ml-14 max-[600px]:mt-0 max-[600px]:ml-0">
+        <Container className="z-30 flex gap-14 -mt-9 justify-between ml-14 max-[600px]:mt-0 max-[600px]:ml-0">
           <div className="relative w-162.5 h-213 max-[1335px]:w-135 max-[1335px]:h-160 max-[1225px]:w-110 -mt-32 max-[1125px]:hidden">
             <Image
               src={
