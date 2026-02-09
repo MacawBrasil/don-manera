@@ -27,6 +27,9 @@ export const Home: GlobalConfig = {
               type: 'upload',
               relationTo: 'media',
               required: true,
+              admin: {
+                description: 'Dimensões da imagem 1660x920',
+              },
             },
           ],
         },
@@ -47,6 +50,9 @@ export const Home: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 1660x380',
+          },
         },
         {
           name: 'buttonTitle',
@@ -67,12 +73,18 @@ export const Home: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 830x436',
+          },
         },
         {
           name: 'image2',
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 680x436',
+          },
         },
       ],
     },
@@ -91,6 +103,9 @@ export const Home: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 650x852',
+          },
         },
         {
           name: 'buttonTitle',
@@ -105,6 +120,9 @@ export const Home: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 1200x630. Tamanho máximo de 5MB',
+          },
         },
       ],
     },
@@ -137,7 +155,15 @@ export const Home: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'title', type: 'richText', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 1660x500',
+          },
+        },
         { name: 'buttonTitle', type: 'text' },
         { name: 'buttonLink', type: 'text' },
       ],
@@ -147,7 +173,15 @@ export const Home: GlobalConfig = {
       type: 'group',
       fields: [
         { name: 'title', type: 'richText', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 581x624',
+          },
+        },
         { name: 'text', type: 'richText', required: true },
         { name: 'textSecondary', type: 'richText', required: true },
       ],

@@ -35,7 +35,7 @@ interface PlansSectionProps {
 
 export function PlansSection({ description, plans }: PlansSectionProps) {
   return (
-    <div className="w-full pt-32">
+    <div className="w-full pt-32 max-[600px]:pt-20">
       <div className="w-full max-w-277.75 mx-auto flex items-end gap-97 max-[1024px]:justify-between max-[1024px]:gap-0 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-10">
         <span className="text-white font-intro text-5xl leading-11 font-normal max-[769px]:text-3xl max-[769px]:leading-8">
           Escolha <br /> o <strong>melhor</strong> <br /> <strong>plano</strong>

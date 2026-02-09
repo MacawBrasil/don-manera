@@ -87,7 +87,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero data={{ Hero: page.Hero }} settings={settings} />
-      <div className="w-full relative h-95 flex items-center">
+      <div className="w-full relative h-95 flex items-center max-[600px]:h-50">
         <div className="absolute inset-0 w-full h-full -z-10">
           <Image
             src={
@@ -98,7 +98,7 @@ export default async function HomePage() {
             alt="Banner Image"
             fill
             priority
-            className="object-left object-cover grayscale mix-blend-multiply"
+            className="object-bottom object-cover grayscale mix-blend-multiply"
           />
         </div>
 
@@ -164,7 +164,7 @@ export default async function HomePage() {
         statsData={sobre}
       />
 
-      <div className="w-full bg-terra pt-148 flex flex-col items-center relative max-[601px]:gap-40 max-[601px]:pt-40 pb-14">
+      <div className="w-full bg-terra pt-148 flex flex-col items-center relative max-[601px]:gap-20 max-[601px]:pt-20 pb-14">
         <VideoPlayerStatic
           videoUrl={isValidMedia(page.brandSection.video) ? page.brandSection.video.url! : ''}
           posterUrl="/poster-video.png"

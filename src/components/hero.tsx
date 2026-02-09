@@ -71,7 +71,7 @@ export function Hero({ data, settings }: HeroProps) {
                   <div className="relative">
                     <RichText
                       data={slide.slideText!}
-                      className="font-intro text-bege font-normal text-6xl text-center max-[769px]:text-4xl max-[601px]:text-3xl max-[601px]:text-start max-[426px]:text-2xl max-[321px]:text-xl"
+                      className="font-intro text-bege font-normal text-6xl text-center max-[601px]:text-start  max-[769px]:text-4xl max-[601px]:text-3xl max-[426px]:text-2xl max-[321px]:text-xl"
                     />
                   </div>
                 </Container>
@@ -81,7 +81,7 @@ export function Hero({ data, settings }: HeroProps) {
         </CarouselContent>
       </Carousel>
       {/* Navigation*/}
-      <div className="absolute right-75 top-1/2 flex flex-col items-center gap-4 max-[1368px]:right-10 max-[601px]:-translate-y-1/2 max-[426px]:right-5">
+      <div className="absolute right-75 top-1/2 flex flex-col items-center gap-4 max-[1368px]:right-10 max-[601px]:-translate-y-1/2 max-[600px]:right-5">
         {/* Arrow Up */}
         {current > 0 && (
           <button

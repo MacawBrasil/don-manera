@@ -18,7 +18,14 @@ export const landingPage: GlobalConfig = {
         { name: 'title', type: 'text', required: true },
         { name: 'logo1', type: 'upload', relationTo: 'media' },
         { name: 'logo2', type: 'upload', relationTo: 'media' },
-        { name: 'background', type: 'upload', relationTo: 'media' },
+        {
+          name: 'background',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Dimensões da imagem 1660x660',
+          },
+        },
       ],
       required: true,
     },
@@ -26,7 +33,15 @@ export const landingPage: GlobalConfig = {
       name: 'benefitsSection',
       type: 'group',
       fields: [
-        { name: 'image', type: 'upload', required: true, relationTo: 'media' },
+        {
+          name: 'image',
+          type: 'upload',
+          required: true,
+          relationTo: 'media',
+          admin: {
+            description: 'Dimensões da imagem 913x364',
+          },
+        },
         { name: 'description', type: 'richText', required: true },
         {
           name: 'benefits',
@@ -39,7 +54,15 @@ export const landingPage: GlobalConfig = {
       name: 'bannerFooter',
       type: 'group',
       fields: [
-        { name: 'backgroundImage', type: 'upload', required: true, relationTo: 'media' },
+        {
+          name: 'backgroundImage',
+          type: 'upload',
+          required: true,
+          relationTo: 'media',
+          admin: {
+            description: 'Dimensões da imagem 1660x791',
+          },
+        },
         { name: 'title', type: 'richText', required: true },
         {
           name: 'buttonTitle',

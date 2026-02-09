@@ -38,6 +38,9 @@ export const service: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 288x246',
+          },
         },
         {
           name: 'title',

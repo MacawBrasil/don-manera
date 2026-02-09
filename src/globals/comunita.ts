@@ -16,7 +16,15 @@ export const comunita: GlobalConfig = {
         { name: 'title', type: 'text' },
         { name: 'logo', type: 'upload', relationTo: 'media' },
         { name: 'description', type: 'textarea', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 421x596',
+          },
+        },
       ],
       required: true,
     },
@@ -25,6 +33,9 @@ export const comunita: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 1360x360',
+      },
     },
     {
       name: 'sectionAbout',
@@ -54,7 +65,15 @@ export const comunita: GlobalConfig = {
           fields: [
             { name: 'color', type: 'text', required: true },
             { name: 'name', type: 'text', required: true },
-            { name: 'image', type: 'upload', relationTo: 'media', required: true },
+            {
+              name: 'image',
+              type: 'upload',
+              relationTo: 'media',
+              required: true,
+              admin: {
+                description: 'Dimensões da imagem 413x234',
+              },
+            },
             { name: 'description', type: 'textarea', required: true },
             {
               name: 'prices',

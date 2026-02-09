@@ -56,7 +56,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="w-full max-w-480 relative h-165 max-[768px]:h-auto max-[768px]:min-h-screen max-[768px]:py-20 flex items-center justify-center flex-col gap-12 max-[768px]:gap-8">
+      <div className="w-full max-w-480 relative h-165 max-[768px]:h-auto max-[768px]:min-h-120 max-[768px]:py-20 flex items-center justify-center flex-col gap-12 max-[768px]:gap-8">
         <Image
           src={
             isValidMedia(page.hero.background) ? page.hero.background.url! : '/default-image.png'
@@ -95,7 +95,7 @@ export default async function Page() {
         </span>
       </div>
 
-      <div className="bg-terra w-full pb-65">
+      <div className="bg-terra w-full pb-65 max-[600px]:pb-20">
         <Container>
           <PlansSection description={sectionPlans.description} plans={sectionPlans.plans} />
         </Container>
@@ -108,7 +108,7 @@ export default async function Page() {
         absolute
       />
 
-      <div className="bg-terra w-full pb-33.25">
+      <div className="bg-terra w-full pb-33.25 max-[600px]:pb-20">
         <div className="-translate-y-14 flex items-end gap-16 min-h-170.5 -translate-x-14 max-[1280px]:items-center max-[1280px]:translate-x-0 max-[1280px]:flex-col max-[1280px]:px-8 max-[1024px]:px-6 max-[768px]:px-4">
           <div className="flex flex-col items-end gap-11 max-[1280px]:items-center max-[1280px]:w-full">
             <div className="relative w-228.25 h-91 max-[1367px]:w-185 max-[768px]:w-full">
@@ -130,7 +130,7 @@ export default async function Page() {
             />
           </div>
 
-          <ul className="space-y-5 mt-8">
+          <ul className="space-y-5 mt-8 max-[600px]:mt-0">
             {page.benefitsSection.benefits?.map((benefit, index) => (
               <li key={index} className="flex items-center gap-3">
                 <svg

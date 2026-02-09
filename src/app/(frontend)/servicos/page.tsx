@@ -44,11 +44,11 @@ export default async function ServicosPage() {
       <div className="w-full bg-terra pb-52.5">
         <Navbar settings={settings} />
 
-        <Container className="pt-49.25">
+        <Container className="pt-49.25 max-[600px]:pt-30">
           <div className="w-full flex justify-between max-[1280px]:flex-col max-[1280px]:gap-10">
             <RichText
               data={page.title}
-              className="text-bege text-6xl font-intro [&_strong]:font-bold max-w-150 max-[769px]:text-4xl"
+              className="text-bege text-6xl font-intro [&_strong]:font-bold max-w-150 max-[769px]:text-4xl max-[601px]:text-3xl max-[426px]:text-2xl max-[321px]:text-xl"
             />
 
             <RichText

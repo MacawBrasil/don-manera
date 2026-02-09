@@ -17,7 +17,15 @@ export const rimborso: GlobalConfig = {
         { name: 'title', type: 'text' },
         { name: 'logo', type: 'upload', relationTo: 'media' },
         { name: 'description', type: 'textarea', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 830x420',
+          },
+        },
       ],
       required: true,
     },
@@ -26,6 +34,9 @@ export const rimborso: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 1360x360',
+      },
     },
     {
       name: 'sectionAbout',
@@ -50,7 +61,15 @@ export const rimborso: GlobalConfig = {
       fields: [
         { name: 'title', type: 'text', required: true },
         { name: 'description', type: 'richText', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 512x358',
+          },
+        },
         {
           name: 'items',
           type: 'array',

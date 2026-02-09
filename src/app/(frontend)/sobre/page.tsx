@@ -42,7 +42,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="relative w-full h-141.5 bg-[#151515] max-[769px]:h-125">
+      <div className="relative w-full h-141.5 bg-[#151515] max-[769px]:h-125 max-[600px]:h-100">
         <Image
           src={isValidMedia(page.hero.banner) ? page.hero.banner.url! : '/default-image.png'}
           fill
@@ -54,7 +54,7 @@ export default async function Page() {
 
         <Navbar settings={settings} />
         <Container className="z-10 absolute w-full bottom-25 flex items-end justify-between left-1/2 -translate-x-1/2 max-[769px]:flex-col max-[769px]:items-start max-[769px]:gap-5 max-[769px]:bottom-1/2 max-[769px]:translate-y-1/2">
-          <span className="text-bege font-intro text-6xl max-w-84 max-[769px]:text-4xl">
+          <span className="text-bege font-intro text-6xl max-w-84 max-[769px]:text-4xl max-[601px]:text-3xl max-[426px]:text-2xl max-[321px]:text-xl">
             {page.hero.titleBanner}
           </span>
           <RichText
@@ -64,7 +64,7 @@ export default async function Page() {
         </Container>
       </div>
 
-      <div className="w-full max-w-480 flex justify-between mt-21.5 pl-4 sm:pl-6 lg:pl-8 2xl:pl-57.5 max-[1025px]:flex-col max-[1025px]:gap-10 max-[769px]:px-4">
+      <div className="w-full max-w-480 flex justify-between mt-21.5 pl-4 sm:pl-6 lg:pl-8 2xl:pl-57.5 max-[1025px]:flex-col max-[1025px]:gap-10 max-[769px]:px-4 max-[600px]:mt-10">
         <RichText
           data={page.text}
           className="text-[#151515] text-lg font-intro max-w-133 max-[1025px]:max-w-full max-[769px]:text-base"
@@ -82,7 +82,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <Container className="mt-42.5 flex items-center justify-between max-w-300 max-[1025px]:flex-col max-[1025px]:gap-10 max-[426px]:mt-20">
+      <Container className="mt-42.5 flex items-center justify-between max-w-300 max-[1025px]:flex-col max-[1025px]:gap-10 max-[600px]:mt-20">
         <div className="w-full max-w-191 p-0.5 bg-linear-to-br from-white via-white via-60% to-terra rounded-[17px] relative max-[768px]:bg-none max-[768px]:border-2 max-[768px]:border-terra">
           <div className="p-12 w-full h-full bg-white rounded-[17px] max-[601px]:p-6">
             <span className="text-terra text-5xl font-intro font-bold leading-11 max-[601px]:text-3xl max-[601px]:leading-8">

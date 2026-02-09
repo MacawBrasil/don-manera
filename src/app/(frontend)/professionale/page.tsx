@@ -52,7 +52,7 @@ export default async function Page() {
       <div className="bg-[#1C293B] w-full pb-28">
         <Navbar settings={settings} />
 
-        <Container className="h-127.5 pt-49.25 flex justify-between max-[1025px]:grid max-[1025px]:grid-cols-2 max-[601px]:gap-10 max-[1025px]:h-fit max-[1025px]:pb-20 max-[601px]:grid-cols-1">
+        <Container className="h-127.5 pt-49.25 max-[600px]:pt-30 flex justify-between max-[1025px]:grid max-[1025px]:grid-cols-2 max-[601px]:gap-10 max-[1025px]:h-fit max-[1025px]:pb-20 max-[601px]:grid-cols-1">
           <div className="relative w-170 h-90 max-[1200px]:w-140 max-[1025px]:w-full max-[601px]:order-2">
             <Image
               src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.png'}

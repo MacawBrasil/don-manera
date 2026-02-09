@@ -19,12 +19,18 @@ export const Contato: GlobalConfig = {
           type: 'upload',
           required: true,
           relationTo: 'media',
+          admin: {
+            description: 'Dimensões da imagem 1360x272',
+          },
         },
         {
           name: 'image',
           type: 'upload',
           required: true,
           relationTo: 'media',
+          admin: {
+            description: 'Dimensões da imagem 600x454',
+          },
         },
         {
           name: 'titleBanner',

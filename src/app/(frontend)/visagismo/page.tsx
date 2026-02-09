@@ -45,7 +45,7 @@ export default async function Page() {
       <div className="w-full bg-[#292829]">
         <Navbar settings={settings} />
 
-        <Container className="pt-49.25 max-[600px]:pt-48 pb-28">
+        <Container className="pt-49.25 max-[600px]:pt-30 pb-28">
           <div className="w-full pl-20 max-[1280px]:pl-0">
             <div className="w-full flex justify-between max-[1280px]:gap-10 max-[768px]:flex-col max-[768px]:items-center">
               {isValidMedia(page.thumbInfo.logo) && (
@@ -71,7 +71,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="flex gap-16 mt-33 max-[860px]:flex-col">
+            <div className="flex gap-16 mt-33 max-[860px]:flex-col max-[600px]:mt-20">
               <RichText
                 data={page.sectionAbout.description1}
                 className="font-intro text-white text-lg leading-6 [&_strong]:font-bold max-w-133 max-[860px]:max-w-full max-[860px]:text-base"
@@ -138,7 +138,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="w-full mt-28">
+            <div className="w-full mt-28 max-[600px]:mt-20">
               <div className="flex items-end gap-70 max-[860px]:flex-col max-[860px]:gap-10 max-[860px]:items-start">
                 <span className="font-intro text-white text-5xl font-normal max-[769px]:text-3xl max-[769px]:leading-8">
                   Resultados <br /> impactantes

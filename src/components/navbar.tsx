@@ -127,13 +127,15 @@ export function Navbar({ settings }: NavbarProps) {
           {/* Logo Central */}
           <div className="justify-self-center">
             {isValidMedia(settings.siteLogo) && (
-              <Image
-                src={settings.siteLogo.url!}
-                width={settings.siteLogo.width!}
-                height={settings.siteLogo.height!}
-                alt="Don Manera Logo"
-                className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
-              />
+              <Link href="/">
+                <Image
+                  src={settings.siteLogo.url!}
+                  width={settings.siteLogo.width!}
+                  height={settings.siteLogo.height!}
+                  alt="Don Manera Logo"
+                  className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
+                />
+              </Link>
             )}
           </div>
 

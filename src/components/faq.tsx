@@ -37,7 +37,7 @@ export function Faq({ description, questions }: FaqProps) {
         >
           {questions.map((question, index) => (
             <AccordionItem key={index} value={question.id!} className="border-none">
-              <AccordionTrigger className="min-h-16.25 text-lg font-intro font-bold leading-6 border-[0.5px] p-4 border-bege text-white data-[state=open]:border-b-0 data-[state=open]:rounded-b-none max-[600px]:pr-12 max-[600px]:text-base">
+              <AccordionTrigger className="min-h-16.25 text-lg font-intro font-bold leading-6 border-[0.5px] p-4 border-bege text-white data-[state=open]:border-b-0 data-[state=open]:rounded-b-none max-[600px]:pr-12 max-[600px]:text-base max-[600px]:min-h-20">
                 {question.question}
               </AccordionTrigger>
               <AccordionContent className="p-4 text-white text-sm font-intro leading-4 border-[0.5px] border-t-0 border-bege rounded-b-md">

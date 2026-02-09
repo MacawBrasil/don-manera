@@ -17,7 +17,15 @@ export const Profissionale: GlobalConfig = {
         { name: 'title', type: 'text' },
         { name: 'logo', type: 'upload', relationTo: 'media' },
         { name: 'description', type: 'textarea', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 421x596',
+          },
+        },
       ],
       required: true,
     },
@@ -36,12 +44,18 @@ export const Profissionale: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 680x360',
+      },
     },
     {
       name: 'image2',
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 292x557',
+      },
     },
     {
       name: 'about',
@@ -106,6 +120,9 @@ export const Profissionale: GlobalConfig = {
               type: 'upload',
               relationTo: 'media',
               required: true,
+              admin: {
+                description: 'Dimensões da imagem 378x322',
+              },
             },
             {
               name: 'description',
@@ -166,6 +183,9 @@ export const Profissionale: GlobalConfig = {
               type: 'upload',
               relationTo: 'media',
               required: true,
+              admin: {
+                description: 'Dimensões da imagem 638x363',
+              },
             },
             {
               name: 'link',
@@ -191,6 +211,9 @@ export const Profissionale: GlobalConfig = {
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Dimensões da imagem 1360x272',
+          },
         },
         {
           name: 'buttonLink',

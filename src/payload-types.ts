@@ -376,6 +376,9 @@ export interface Home {
         };
         [k: string]: unknown;
       } | null;
+      /**
+       * Dimensões da imagem 1660x920
+       */
       slideImage: string | Media;
       id?: string | null;
     }[];
@@ -396,12 +399,21 @@ export interface Home {
       };
       [k: string]: unknown;
     };
+    /**
+     * Dimensões da imagem 1660x380
+     */
     image: string | Media;
     buttonTitle?: string | null;
     buttonLink?: string | null;
   };
   bannerGroup: {
+    /**
+     * Dimensões da imagem 830x436
+     */
     image1: string | Media;
+    /**
+     * Dimensões da imagem 680x436
+     */
     image2: string | Media;
   };
   brandSection: {
@@ -420,9 +432,15 @@ export interface Home {
       };
       [k: string]: unknown;
     };
+    /**
+     * Dimensões da imagem 650x852
+     */
     image: string | Media;
     buttonTitle?: string | null;
     buttonLink?: string | null;
+    /**
+     * Dimensões da imagem 1200x630. Tamanho máximo de 5MB
+     */
     video: string | Media;
   };
   benefitsSection: {
@@ -495,6 +513,9 @@ export interface Home {
       };
       [k: string]: unknown;
     };
+    /**
+     * Dimensões da imagem 1660x500
+     */
     image: string | Media;
     buttonTitle?: string | null;
     buttonLink?: string | null;
@@ -515,6 +536,9 @@ export interface Home {
       };
       [k: string]: unknown;
     };
+    /**
+     * Dimensões da imagem 581x624
+     */
     image: string | Media;
     text: {
       root: {
@@ -575,6 +599,9 @@ export interface Sobre {
     keywords?: string | null;
   };
   hero: {
+    /**
+     * Dimensões da imagem 1660x566
+     */
     banner: string | Media;
     titleBanner: string;
     description: {
@@ -608,6 +635,9 @@ export interface Sobre {
     };
     [k: string]: unknown;
   };
+  /**
+   * Dimensões da imagem 757x416
+   */
   image: string | Media;
   liderancaText: {
     root: {
@@ -624,8 +654,17 @@ export interface Sobre {
     };
     [k: string]: unknown;
   };
+  /**
+   * Dimensões da imagem 310x530
+   */
   liderancaImage: string | Media;
+  /**
+   * Dimensões da imagem 1200x650. Tamanho máximo de 5MB
+   */
   video: string | Media;
+  /**
+   * Dimensões da imagem 1200x650
+   */
   thumbVideo: string | Media;
   profissionaisNumber: number;
   avaliacoesNumber: number;
@@ -646,7 +685,13 @@ export interface Sobre {
     };
     [k: string]: unknown;
   };
+  /**
+   * Dimensões da imagem 423x600
+   */
   image1: string | Media;
+  /**
+   * Dimensões da imagem 423x600
+   */
   image2: string | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -676,7 +721,13 @@ export interface Contato {
     keywords?: string | null;
   };
   work: {
+    /**
+     * Dimensões da imagem 1360x272
+     */
     banner: string | Media;
+    /**
+     * Dimensões da imagem 600x454
+     */
     image: string | Media;
     titleBanner: string;
     description: {
@@ -730,8 +781,14 @@ export interface Comunita {
     title?: string | null;
     logo?: (string | null) | Media;
     description: string;
+    /**
+     * Dimensões da imagem 421x596
+     */
     image: string | Media;
   };
+  /**
+   * Dimensões da imagem 1360x360
+   */
   imageHero: string | Media;
   sectionAbout: {
     description1: {
@@ -764,6 +821,9 @@ export interface Comunita {
       | {
           color: string;
           name: string;
+          /**
+           * Dimensões da imagem 413x234
+           */
           image: string | Media;
           description: string;
           prices?:
@@ -807,7 +867,13 @@ export interface Comunita {
  */
 export interface Setting {
   id: string;
+  /**
+   * Dimensões da imagem 147x96
+   */
   siteLogo: string | Media;
+  /**
+   * Dimensões da imagem 298x194
+   */
   siteLogofooter: string | Media;
   LinkAssinatura: string;
   linkInstagram?: string | null;
@@ -887,9 +953,15 @@ export interface LandingPage {
     title: string;
     logo1?: (string | null) | Media;
     logo2?: (string | null) | Media;
+    /**
+     * Dimensões da imagem 1660x660
+     */
     background?: (string | null) | Media;
   };
   benefitsSection: {
+    /**
+     * Dimensões da imagem 913x364
+     */
     image: string | Media;
     description: {
       root: {
@@ -914,6 +986,9 @@ export interface LandingPage {
       | null;
   };
   bannerFooter: {
+    /**
+     * Dimensões da imagem 1660x791
+     */
     backgroundImage: string | Media;
     title: {
       root: {
@@ -964,11 +1039,20 @@ export interface Profissionale {
     title?: string | null;
     logo?: (string | null) | Media;
     description: string;
+    /**
+     * Dimensões da imagem 421x596
+     */
     image: string | Media;
   };
   buttonText: string;
   buttonLink: string;
+  /**
+   * Dimensões da imagem 680x360
+   */
   imageHero: string | Media;
+  /**
+   * Dimensões da imagem 292x557
+   */
   image2: string | Media;
   about: {
     title: {
@@ -1039,6 +1123,9 @@ export interface Profissionale {
     description: string;
     educators: {
       name: string;
+      /**
+       * Dimensões da imagem 378x322
+       */
       image: string | Media;
       description: string;
       id?: string | null;
@@ -1094,6 +1181,9 @@ export interface Profissionale {
         };
         [k: string]: unknown;
       };
+      /**
+       * Dimensões da imagem 638x363
+       */
       image: string | Media;
       link: string;
       id?: string | null;
@@ -1101,6 +1191,9 @@ export interface Profissionale {
   };
   banner: {
     title: string;
+    /**
+     * Dimensões da imagem 1360x272
+     */
     image: string | Media;
     buttonLink: string;
     buttonText: string;
@@ -1136,8 +1229,14 @@ export interface Visagismo {
     title?: string | null;
     logo?: (string | null) | Media;
     description: string;
+    /**
+     * Dimensões da imagem 421x596
+     */
     image: string | Media;
   };
+  /**
+   * Dimensões da imagem 800x360
+   */
   imageHero: string | Media;
   sectionAbout: {
     description1: {
@@ -1182,7 +1281,13 @@ export interface Visagismo {
     };
     items?:
       | {
+          /**
+           * Dimensões da imagem 232x358
+           */
           beforeImage?: (string | null) | Media;
+          /**
+           * Dimensões da imagem 232x358
+           */
           afterImage?: (string | null) | Media;
           description?: {
             root: {
@@ -1273,6 +1378,9 @@ export interface ServicePage {
   };
   services: {
     activeHome?: boolean | null;
+    /**
+     * Dimensões da imagem 288x246
+     */
     image: string | Media;
     title: string;
     price: number;
@@ -1309,8 +1417,14 @@ export interface Rimborso {
     title?: string | null;
     logo?: (string | null) | Media;
     description: string;
+    /**
+     * Dimensões da imagem 830x420
+     */
     image: string | Media;
   };
+  /**
+   * Dimensões da imagem 1360x360
+   */
   imageHero: string | Media;
   sectionAbout: {
     description1: {
@@ -1354,6 +1468,9 @@ export interface Rimborso {
       };
       [k: string]: unknown;
     };
+    /**
+     * Dimensões da imagem 512x358
+     */
     image: string | Media;
     items?:
       | {

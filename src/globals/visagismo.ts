@@ -17,7 +17,15 @@ export const visagismo: GlobalConfig = {
         { name: 'title', type: 'text' },
         { name: 'logo', type: 'upload', relationTo: 'media' },
         { name: 'description', type: 'textarea', required: true },
-        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+          admin: {
+            description: 'Dimensões da imagem 421x596',
+          },
+        },
       ],
       required: true,
     },
@@ -26,6 +34,9 @@ export const visagismo: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 800x360',
+      },
     },
     {
       name: 'sectionAbout',
@@ -53,8 +64,22 @@ export const visagismo: GlobalConfig = {
           name: 'items',
           type: 'array',
           fields: [
-            { name: 'beforeImage', type: 'upload', relationTo: 'media' },
-            { name: 'afterImage', type: 'upload', relationTo: 'media' },
+            {
+              name: 'beforeImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Dimensões da imagem 232x358',
+              },
+            },
+            {
+              name: 'afterImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Dimensões da imagem 232x358',
+              },
+            },
             { name: 'description', type: 'richText' },
           ],
         },

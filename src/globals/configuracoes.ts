@@ -12,6 +12,9 @@ export const Settings: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 147x96',
+      },
     },
     {
       name: 'siteLogofooter',
@@ -19,6 +22,9 @@ export const Settings: GlobalConfig = {
       type: 'upload',
       relationTo: 'media',
       required: true,
+      admin: {
+        description: 'Dimensões da imagem 298x194',
+      },
     },
     {
       name: 'LinkAssinatura',

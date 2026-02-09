@@ -69,7 +69,7 @@ export default async function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant={'primary'} className="mt-28">
+                <Button variant={'primary'} className="mt-28 max-[600px]:mt-10">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={28}

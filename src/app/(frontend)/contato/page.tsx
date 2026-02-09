@@ -44,7 +44,7 @@ export default async function Page() {
     <>
       <div className="w-full bg-terra max-[769px]:pb-10">
         <Navbar settings={settings} />
-        <Container className="pt-49.25">
+        <Container className="pt-49.25 max-[600px]:pt-30">
           <div>
             <span className="text-white font-intro text-5xl leading-11 font-thin max-[769px]:text-3xl max-[769px]:leading-8">
               Vamos <strong>falar</strong> <br /> <strong>um pouco?</strong>
