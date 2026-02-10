@@ -18,6 +18,7 @@ interface HeroProps {
 
 export function Hero({ data, settings }: HeroProps) {
   const [api, setApi] = useState<CarouselApi>()
+  const [isMobile, setIsMobile] = useState(false)
   const [current, setCurrent] = useState(0)
   const totalSlides = data.Hero.slides.length
 
@@ -30,6 +31,15 @@ export function Hero({ data, settings }: HeroProps) {
       setCurrent(api.selectedScrollSnap())
     })
   }, [api])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const getVisibleIndexes = () => {
     const indexes = []
@@ -47,13 +57,13 @@ export function Hero({ data, settings }: HeroProps) {
         opts={{
           align: 'start',
         }}
-        orientation="vertical"
+        orientation={isMobile ? 'horizontal' : 'vertical'}
         className="w-full max-w-screen max-h-230 relative"
       >
         <CarouselContent className="h-230 max-[769px]:h-192 max-[601px]:h-160">
           {data.Hero.slides.map((slide, index) => (
-            <CarouselItem key={index} className="pt-0">
-              <div className="w-full h-230 relative max-[769px]:h-192 max-[601px]:h-160">
+            <CarouselItem key={index} className="pt-0 pl-0">
+              <div className="w-full h-230 pl-4 relative max-[769px]:h-192 max-[601px]:h-160">
                 <div className="absolute inset-0 w-full h-full z-10" key={index}>
                   <Image
                     src={
@@ -68,7 +78,7 @@ export function Hero({ data, settings }: HeroProps) {
                 </div>
 
                 <Container className="absolute bottom-60 left-1/2 -translate-x-1/2 z-20 flex flex-col gap-24 max-[601px]:bottom-1/2 max-[601px]:translate-y-1/2 max-[601px]:gap-12">
-                  <div className="relative">
+                  <div className="relative pl-4">
                     <RichText
                       data={slide.slideText!}
                       className="font-intro text-bege font-normal text-6xl text-center max-[601px]:text-start  max-[769px]:text-4xl max-[601px]:text-3xl max-[426px]:text-2xl max-[321px]:text-xl"
@@ -81,7 +91,7 @@ export function Hero({ data, settings }: HeroProps) {
         </CarouselContent>
       </Carousel>
       {/* Navigation*/}
-      <div className="absolute right-75 top-1/2 flex flex-col items-center gap-4 max-[1368px]:right-10 max-[601px]:-translate-y-1/2 max-[600px]:right-5">
+      <div className="absolute right-75 top-1/2 flex flex-col items-center gap-4 max-[1368px]:right-10 max-[601px]:-translate-y-1/2 max-[600px]:right-5 max-[600px]:hidden">
         {/* Arrow Up */}
         {current > 0 && (
           <button
@@ -141,7 +151,69 @@ export function Hero({ data, settings }: HeroProps) {
           </button>
         )}
       </div>
-      <Container className="absolute left-1/2 -translate-x-1/2 bottom-20 w-full flex items-center justify-between">
+      <div className="hidden absolute right-5 bottom-5 max-[600px]:flex items-center gap-4">
+        {/* Arrow Up */}
+        {current > 0 && (
+          <button
+            onClick={() => api?.scrollPrev()}
+            className="text-bege/70 hover:text-bege transition-colors"
+            aria-label="Slide anterior"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="-rotate-90"
+            >
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </button>
+        )}
+
+        {/* Index numbers */}
+        {getVisibleIndexes().map((idx) => (
+          <button
+            key={idx}
+            onClick={() => api?.scrollTo(idx)}
+            className={`transition-all  ${
+              idx === current ? 'text-white text-lg' : 'text-white/50 text-sm hover:text-white/80'
+            }`}
+          >
+            {String(idx + 1).padStart(2, '0')}
+          </button>
+        ))}
+
+        {/* Arrow Down */}
+        {current < totalSlides - 1 && (
+          <button
+            onClick={() => api?.scrollNext()}
+            className="text-bege/70 hover:text-bege transition-colors"
+            aria-label="Próximo slide"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="-rotate-90"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        )}
+      </div>
+      <Container className="absolute left-1/2 -translate-x-1/2 bottom-20 w-full flex items-center justify-between max-[600px]:bottom-35">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={91}
