@@ -12,7 +12,7 @@ export function WhatsappMenu({ settings }: WhatsappMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed right-14 bottom-14 z-50">
+    <div className="fixed right-14 bottom-14 z-50 max-[600px]:right-5 max-[600px]:bottom-5">
       {/* Popup box */}
       {isOpen && (
         <div className="absolute bottom-20 right-0 rounded-xl p-4 flex flex-col gap-3 min-w-74">

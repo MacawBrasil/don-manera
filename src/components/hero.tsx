@@ -303,8 +303,6 @@ export function Hero({ data, settings }: HeroProps) {
           </a>
         </div>
       </Container>
-
-      <WhatsappMenu settings={settings} />
     </div>
   )
 }
