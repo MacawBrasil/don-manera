@@ -56,10 +56,11 @@ export default async function Page() {
                   width={325}
                   height={144}
                   alt=""
+                  className="max-[600px]:order-2"
                 />
               )}
 
-              <div className="relative w-201.5 h-90 max-[1280px]:w-full">
+              <div className="relative w-201.5 h-90 max-[1280px]:w-full max-[600px]:h-40">
                 <Image
                   src={isValidMedia(page.imageHero) ? page.imageHero.url! : ''}
                   fill

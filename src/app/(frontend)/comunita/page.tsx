@@ -46,7 +46,7 @@ export default async function Page() {
       <div className="w-full bg-terra pb-28">
         <Navbar settings={settings} />
         <Container className="pt-49.25 max-[600px]:pt-30">
-          <div className="relative w-full h-90">
+          <div className="relative w-full h-90 max-[600px]:h-40">
             <Image
               src={isValidMedia(page.imageHero) ? page.imageHero.url! : '/default-image.png'}
               fill
@@ -56,7 +56,7 @@ export default async function Page() {
             />
           </div>
 
-          <div className="w-full max-w-277.75 mx-auto flex justify-around mt-32 max-[1024px]:flex-col max-[1024px]:gap-10 max-[600px]:mt-20">
+          <div className="w-full max-w-277.75 mx-auto flex justify-around mt-32 max-[1024px]:flex-col max-[1024px]:gap-10 max-[600px]:mt-10">
             <div className="max-w-133 max-[1024px]:max-w-full">
               <RichText
                 data={page.sectionAbout.description1}
