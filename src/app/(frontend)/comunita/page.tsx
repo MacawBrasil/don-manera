@@ -54,6 +54,16 @@ export default async function Page() {
               priority
               className="object-cover rounded-[30px]"
             />
+            <Image
+              src={
+                isValidMedia(page.thumbInfo.logo) ? page.thumbInfo.logo.url! : '/default-image.png'
+              }
+              width={283}
+              height={125}
+              alt=""
+              priority
+              className="object-cover rounded-[30px] absolute top-1/2 -translate-y-1/2 right-36 max-[1025px]:right-20 max-[769px]:right-16 max-[600px]:hidden"
+            />
           </div>
 
           <div className="w-full max-w-277.75 mx-auto flex justify-around mt-32 max-[1024px]:flex-col max-[1024px]:gap-10 max-[600px]:mt-10">

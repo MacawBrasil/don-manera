@@ -20,7 +20,7 @@ export const leftMenuItems = [
 
 export const rightMenuItems = [
   { id: 5, label: 'Fidelidade', href: '/comunita' },
-  { id: 6, label: 'Escolas', href: '/professionale' },
+  { id: 6, label: 'Escola', href: '/professionale' },
   { id: 7, label: 'Visagismo', href: '/visagismo' },
 ]
 
@@ -41,7 +41,7 @@ export function Navbar({ settings }: NavbarProps) {
     <>
       {/* Mobile Menu - fora do nav para funcionar corretamente com fixed */}
       <div
-        className={`lg:hidden fixed inset-0 z-40 bg-[#1a1a1a]/95 transition-opacity duration-300 ${
+        className={`xl:hidden fixed inset-0 z-40 bg-[#1a1a1a]/95 transition-opacity duration-300 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -70,13 +70,13 @@ export function Navbar({ settings }: NavbarProps) {
               {item.label}
             </Link>
           ))}
-          <a
-            href={settings.LinkAssinatura}
+          <Link
+            href={'/lp'}
             onClick={() => setMobileMenuOpen(false)}
             className="mt-4 min-w-40 px-8 py-3 bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-lg hover:bg-[#D9CCB2]/10 transition-colors"
           >
             Assinatura
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -85,9 +85,9 @@ export function Navbar({ settings }: NavbarProps) {
           scrolled ? 'bg-[#1a1a1a]/95 backdrop-blur-sm py-3' : 'bg-transparent pt-5'
         }`}
       >
-        <Container className="grid grid-cols-3 items-center">
+        <Container className="flex items-center justify-between">
           {/* Menu Esquerdo */}
-          <div className="hidden lg:flex items-center justify-end gap-4 xl:gap-8 2xl:gap-12">
+          <div className="hidden xl:flex items-center gap-23.5">
             {leftMenuItems.map((item) => (
               <Link
                 key={item.id}
@@ -101,7 +101,7 @@ export function Navbar({ settings }: NavbarProps) {
 
           {/* Botão Menu Mobile (esquerda) */}
           <button
-            className="lg:hidden justify-self-start text-bege z-50"
+            className="xl:hidden justify-self-start text-bege z-50 order-2"
             aria-label="Menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -125,7 +125,7 @@ export function Navbar({ settings }: NavbarProps) {
           </button>
 
           {/* Logo Central */}
-          <div className="justify-self-center">
+          <div className="">
             {isValidMedia(settings.siteLogo) && (
               <Link href="/">
                 <Image
@@ -140,33 +140,25 @@ export function Navbar({ settings }: NavbarProps) {
           </div>
 
           {/* Menu Direito + Botão Assinatura */}
-          <div className="hidden lg:flex items-center justify-start gap-4 xl:gap-6 2xl:gap-10">
-            {rightMenuItems.map((item) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={settings.LinkAssinatura}
+          <div className="hidden xl:flex items-center gap-11">
+            <div className="flex items-center gap-14">
+              {rightMenuItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="font-open-sans text-sm text-bege xl:text-base 2xl:text-lg hover:opacity-80 transition-opacity whitespace-nowrap"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href={'/lp'}
               className="px-4 xl:px-6 py-2 bg-transparent font-open-sans font-bold border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-sm xl:text-lg whitespace-nowrap hover:bg-[#D9CCB2]/10 transition-colors"
             >
               Assinatura
-            </a>
+            </Link>
           </div>
-
-          {/* Botão Assinatura Mobile (direita) */}
-          <a
-            href={settings.LinkAssinatura}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="lg:hidden justify-self-end px-3 py-1.5 font-bold font-open-sans bg-transparent border border-[#D9CCB2] rounded-4xl text-[#D9CCB2] text-xs sm:text-sm whitespace-nowrap"
-          >
-            Assinatura
-          </a>
         </Container>
       </nav>
     </>

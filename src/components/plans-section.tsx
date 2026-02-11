@@ -67,7 +67,7 @@ export function PlansSection({ description, plans }: PlansSectionProps) {
                     return (
                       <div
                         key={price.id ?? priceIndex}
-                        className="w-full first:border-2 first:border-bege first:rounded-[40px] p-6"
+                        className="w-full first:border-2 first:border-bege first:rounded-[40px] p-6 "
                       >
                         <span className="text-white font-intro text-2xl font-bold leading-6">
                           {price.price.title}
@@ -90,7 +90,7 @@ export function PlansSection({ description, plans }: PlansSectionProps) {
                     )
                   }
                   return (
-                    <div key={price.id ?? priceIndex} className="w-full p-6">
+                    <div key={price.id ?? priceIndex} className="w-full p-6 py-0">
                       <div className="w-full flex justify-between items-center max-[1280px]:flex-col max-[1280px]:items-start">
                         <span className="text-white font-intro text-2xl font-bold leading-6">
                           {price.price.title}
@@ -117,7 +117,7 @@ export function PlansSection({ description, plans }: PlansSectionProps) {
                 })}
               </div>
 
-              <div className="w-full flec flex-col space-y-5 mt-11">
+              <div className="w-full pl-6 flec flex-col space-y-5 mt-11">
                 {plan.benefits?.map((benefit, benefitIndex) => (
                   <div key={benefit.id ?? benefitIndex} className="flex items-start space-x-2">
                     <div className="flex items-center justify-center bg-[#FDE044] rounded-[6px]">

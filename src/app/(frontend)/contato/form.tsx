@@ -107,7 +107,7 @@ export function FormContact() {
                 aria-invalid={fieldState.invalid}
                 placeholder="Nome"
                 autoComplete="name"
-                className="min-h-16 font-intro text-white placeholder:text-white text-lg leading-6 border-[0.5px] border-bege rounded-[10px]"
+                className="min-h-16 pl-6 py-0 font-intro text-white placeholder:text-white placeholder:text-lg text-lg! leading-6 border-[0.5px] border-bege rounded-[10px]"
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -125,7 +125,7 @@ export function FormContact() {
                 aria-invalid={fieldState.invalid}
                 placeholder="Email"
                 autoComplete="email"
-                className="min-h-16 font-intro text-white placeholder:text-white text-lg leading-6 border-[0.5px] border-bege rounded-[10px]"
+                className="min-h-16 pl-6 font-intro placeholder:text-lg text-white placeholder:text-white text-lg! leading-6 border-[0.5px] border-bege rounded-[10px]"
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -143,7 +143,7 @@ export function FormContact() {
                 aria-invalid={fieldState.invalid}
                 placeholder="Telefone"
                 autoComplete="tel"
-                className="min-h-16 font-intro text-white placeholder:text-white text-lg leading-6 border-[0.5px] border-bege rounded-[10px]"
+                className="min-h-16 pl-6 font-intro placeholder:text-lg text-white placeholder:text-white text-lg! leading-6 border-[0.5px] border-bege rounded-[10px]"
                 onChange={(e) => field.onChange(formatPhone(e.target.value))}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -160,7 +160,7 @@ export function FormContact() {
                 id="form-contact-message"
                 placeholder="Mensagem"
                 rows={6}
-                className="min-h-36 resize-none font-intro text-white placeholder:text-white text-lg leading-6 border-[0.5px] border-bege rounded-[10px]"
+                className="min-h-36 pl-6 resize-none placeholder:text-lg font-intro text-white placeholder:text-white text-lg! leading-6 border-[0.5px] border-bege rounded-[10px]"
                 aria-invalid={fieldState.invalid}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}

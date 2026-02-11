@@ -70,26 +70,26 @@ export function Stats({ data }: StatsProps) {
       <div className="flex flex-col items-center">
         <ProfissionaisIcon />
         <span className="text-7xl text-terra font-intro mt-2.5">
-          {`+${data.profissionaisNumber}`}
+          {`+${data.profissionaisNumber.toLocaleString('pt-BR')}`}
         </span>
         <span className="text-terra font-intro text-2xl -mt-2">Profissionais</span>
       </div>
 
       <div className="flex flex-col items-center">
         <AvaliacoesIcon />
-        <span className="text-7xl text-terra font-intro mt-2.5">{`+${data.avaliacoesNumber}`}</span>
+        <span className="text-7xl text-terra font-intro fonl mt-2.5">{`+${data.avaliacoesNumber.toLocaleString('pt-BR')}`}</span>
         <span className="text-terra font-intro text-2xl -mt-2">avaliações 5 estrelas</span>
       </div>
 
       <div className="flex flex-col items-center">
         <AssinantesIcon />
-        <span className="text-7xl text-terra font-intro mt-2.5">{`+${data.assinanterNumber}`}</span>
+        <span className="text-7xl text-terra font-intro mt-2.5">{`+${data.assinanterNumber.toLocaleString('pt-BR')}`}</span>
         <span className="text-terra font-intro text-2xl -mt-2">assinantes</span>
       </div>
 
       <div className="flex flex-col items-center">
         <UnidadesIcon />
-        <span className="text-7xl text-terra font-intro mt-2.5 ">{`+${data.unidadesNumber}`}</span>
+        <span className="text-7xl text-terra font-intro mt-2.5 ">{`${String(data.unidadesNumber).padStart(2, '0')}`}</span>
         <span className="text-terra font-intro text-2xl -mt-2">unidades</span>
       </div>
     </Container>

@@ -32,6 +32,18 @@ export const Settings: GlobalConfig = {
       required: true,
     },
     {
+      name: 'linkAndroid',
+      label: 'Link para a versão Android da aplicação',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'linkIOS',
+      label: 'Link para a versão iOS da aplicação',
+      type: 'text',
+      required: true,
+    },
+    {
       name: 'linkInstagram',
       type: 'text',
     },

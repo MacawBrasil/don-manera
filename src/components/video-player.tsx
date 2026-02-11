@@ -25,13 +25,13 @@ export function VideoPlayer({ videoUrl, posterUrl = '/poster-video.png' }: Video
         src={videoUrl}
         poster={posterUrl}
         controls={isPlaying}
-        className="w-full h-full object-cover rounded-[45px]"
+        className="w-full h-full object-cover rounded-[45px] aspect-video"
       />
 
       {!isPlaying && (
         <div
           onClick={handlePlay}
-          className="absolute inset-0 flex flex-col items-start pl-28 justify-center bg-black/40 transition-opacity hover:bg-black/50 max-[601px]:pl-0"
+          className="absolute inset-0 flex flex-col items-start pl-28 justify-center max-[601px]:pl-0"
         >
           <div className="relative flex flex-col items-center gap-6 w-full">
             <div className="flex items-center gap-6 w-full max-[601px]:flex-col max-[601px]:justify-center max-[601px]:gap-10">

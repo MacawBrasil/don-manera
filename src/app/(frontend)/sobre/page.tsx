@@ -64,7 +64,7 @@ export default async function Page() {
         </Container>
       </div>
 
-      <div className="w-full max-w-480 flex justify-between mt-21.5 pl-4 sm:pl-6 lg:pl-8 2xl:pl-57.5 max-[1025px]:flex-col max-[1025px]:gap-10 max-[769px]:px-4 max-[600px]:mt-10">
+      <div className="w-full max-w-480 mx-auto flex justify-between mt-21.5 pl-4 sm:pl-6 lg:pl-8 2xl:pl-57.5 max-[1025px]:flex-col max-[1025px]:gap-10 max-[769px]:px-4 max-[600px]:mt-10">
         <RichText
           data={page.text}
           className="text-[#151515] text-lg font-intro max-w-133 max-[1025px]:max-w-full max-[769px]:text-base"
@@ -77,7 +77,7 @@ export default async function Page() {
             alt=""
             priority
             quality={100}
-            className="object-cover rounded-l-[30px] max-[1025px]:rounded-[30px]"
+            className="object-cover rounded-l-[30px] min-[1921px]:rounded-[30px] max-[1025px]:rounded-[30px]"
           />
         </div>
       </div>

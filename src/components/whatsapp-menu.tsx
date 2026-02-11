@@ -15,7 +15,7 @@ export function WhatsappMenu({ settings }: WhatsappMenuProps) {
     <div className="fixed right-14 bottom-14 z-50 max-[600px]:right-5 max-[600px]:bottom-5">
       {/* Popup box */}
       {isOpen && (
-        <div className="absolute bottom-20 right-0 rounded-xl p-4 flex flex-col gap-3 min-w-74">
+        <div className="absolute bottom-15 right-0 rounded-xl p-4 flex flex-col gap-3 min-w-74">
           {settings.unidades?.map((unidade, index) => (
             <a
               key={unidade.id}
@@ -26,7 +26,7 @@ export function WhatsappMenu({ settings }: WhatsappMenuProps) {
                 animationFillMode: 'forwards',
               }}
             >
-              <Button className="rounded-4xl bg-black/70 border border-bege text-bege min-w-full max-w-70.75 h-11">
+              <Button className="rounded-4xl bg-black/75 border border-bege font-bold text-lg font-open-sans text-bege min-w-full max-w-70.75 h-11">
                 {unidade.nome}
               </Button>
             </a>

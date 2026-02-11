@@ -7,6 +7,7 @@ import { RichText } from './RichText'
 import { Button } from './ui/button'
 import { leftMenuItems, rightMenuItems } from './navbar'
 import { cn } from '@/lib/utils'
+import { Macaw } from './Macaw'
 
 interface FooterProps {
   data: Setting
@@ -38,7 +39,7 @@ export function Footer({ data, padding }: FooterProps) {
 
           <div>
             <span className="text-terra font-intro font-bold">Acesso rápido</span>
-            <ul className="flex flex-col gap-2 mt-3">
+            <ul className="flex flex-col gap-2 mt-3 list-none p-0">
               {listMenu.map((item, index) => (
                 <li key={index}>
                   <a
@@ -163,7 +164,7 @@ export function Footer({ data, padding }: FooterProps) {
             Todos os direitos reservados. 2025
           </span>
 
-          <span className="text-[#151515] font-intro text-sm font-normal">Macaw</span>
+          <Macaw />
         </div>
       </Container>
     </footer>

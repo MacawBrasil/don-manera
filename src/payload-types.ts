@@ -876,6 +876,8 @@ export interface Setting {
    */
   siteLogofooter: string | Media;
   LinkAssinatura: string;
+  linkAndroid: string;
+  linkIOS: string;
   linkInstagram?: string | null;
   linkYoutube?: string | null;
   whatsapp?: number | null;
@@ -1809,6 +1811,8 @@ export interface SettingsSelect<T extends boolean = true> {
   siteLogo?: T;
   siteLogofooter?: T;
   LinkAssinatura?: T;
+  linkAndroid?: T;
+  linkIOS?: T;
   linkInstagram?: T;
   linkYoutube?: T;
   whatsapp?: T;

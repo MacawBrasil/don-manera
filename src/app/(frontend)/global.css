@@ -126,6 +126,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ul,
+  ol {
+    all: revert;
+    padding-left: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin: 0;
+  }
 }
 
 @keyframes fade-in-up {

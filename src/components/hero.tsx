@@ -93,34 +93,33 @@ export function Hero({ data, settings }: HeroProps) {
       {/* Navigation*/}
       <div className="absolute right-75 top-1/2 flex flex-col items-center gap-4 max-[1368px]:right-10 max-[601px]:-translate-y-1/2 max-[600px]:right-5 max-[600px]:hidden">
         {/* Arrow Up */}
-        {current > 0 && (
-          <button
-            onClick={() => api?.scrollPrev()}
-            className="text-bege/70 hover:text-bege transition-colors"
-            aria-label="Slide anterior"
+        <button
+          onClick={() => api?.scrollPrev()}
+          className={`transition-colors cursor-pointer ${current > 0 ? 'text-bege/70 hover:text-bege' : 'text-bege/20 cursor-default'}`}
+          aria-label="Slide anterior"
+          disabled={current === 0}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m18 15-6-6-6 6" />
-            </svg>
-          </button>
-        )}
+            <path d="m18 15-6-6-6 6" />
+          </svg>
+        </button>
 
         {/* Index numbers */}
         {getVisibleIndexes().map((idx) => (
           <button
             key={idx}
             onClick={() => api?.scrollTo(idx)}
-            className={`transition-all ${
+            className={`transition-all cursor-pointer ${
               idx === current ? 'text-white text-lg' : 'text-white/50 text-sm hover:text-white/80'
             }`}
           >
@@ -129,34 +128,33 @@ export function Hero({ data, settings }: HeroProps) {
         ))}
 
         {/* Arrow Down */}
-        {current < totalSlides - 1 && (
-          <button
-            onClick={() => api?.scrollNext()}
-            className="text-bege/70 hover:text-bege transition-colors"
-            aria-label="Próximo slide"
+        <button
+          onClick={() => api?.scrollNext()}
+          className={`transition-colors cursor-pointer ${current < totalSlides - 1 ? 'text-bege/70 hover:text-bege' : 'text-bege/20 cursor-default'}`}
+          aria-label="Próximo slide"
+          disabled={current >= totalSlides - 1}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-        )}
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </button>
       </div>
       <div className="hidden absolute right-5 bottom-5 max-[600px]:flex items-center gap-4">
         {/* Arrow Up */}
         {current > 0 && (
           <button
             onClick={() => api?.scrollPrev()}
-            className="text-bege/70 hover:text-bege transition-colors"
+            className="text-bege/70 hover:text-bege transition-colors cursor-pointer"
             aria-label="Slide anterior"
           >
             <svg
@@ -181,7 +179,7 @@ export function Hero({ data, settings }: HeroProps) {
           <button
             key={idx}
             onClick={() => api?.scrollTo(idx)}
-            className={`transition-all  ${
+            className={`transition-all cursor-pointer  ${
               idx === current ? 'text-white text-lg' : 'text-white/50 text-sm hover:text-white/80'
             }`}
           >
@@ -193,7 +191,7 @@ export function Hero({ data, settings }: HeroProps) {
         {current < totalSlides - 1 && (
           <button
             onClick={() => api?.scrollNext()}
-            className="text-bege/70 hover:text-bege transition-colors"
+            className="text-bege/70 hover:text-bege transition-colors cursor-pointer"
             aria-label="Próximo slide"
           >
             <svg

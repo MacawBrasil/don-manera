@@ -208,15 +208,15 @@ export default async function Page() {
                 value={module.id!}
                 className="border-b-0 relative before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 before:bg-linear-30 before:from-black before:to-[#7B7B7B] before:to-30% before:rounded-full"
               >
-                <AccordionTrigger className="grid grid-cols-2 min-h-44.25 items-center max-[850px]:h-fit">
-                  <div className="flex items-center gap-16 max-[850px]:col-span-2 max-[500px]:gap-4 max-[500px]:flex-col max-[500px]:items-start">
+                <AccordionTrigger className="grid grid-cols-2 pt-11 h-fit pb-8 items-center max-[850px]:h-fit">
+                  <div className="flex items-center gap-16 max-[850px]:col-span-2 max-[600px]:gap-4 max-[600px]:items-start">
                     <div className="flex flex-col gap-7">
                       <RichText
                         data={module.type}
-                        className="text-white font-intro text-xl font-light leading-6"
+                        className="text-white font-intro text-xl font-light leading-6 max-[600px]:text-sm max-[600px]:leading-normal"
                       />
                       <div
-                        className="h-px w-32.25"
+                        className="h-px w-32.25 max-[600px]:w-20"
                         style={{
                           background: `linear-gradient(30deg, ${module.color}, #1C293B)`,
                         }}
@@ -226,11 +226,11 @@ export default async function Page() {
                       <RichText
                         data={module.title}
                         style={{ color: module.color }}
-                        className="font-intro text-5xl max-[1280px]:text-4xl max-[768px]:text-3xl max-[500px]:text-2xl"
+                        className="font-intro text-5xl max-[1280px]:text-4xl max-[768px]:text-3xl max-[600px]:text-sm max-[600px]:leading-normal"
                       />
 
                       <div
-                        className="w-7.5 h-7.5 flex items-center justify-center rounded-[6px] -translate-y-2"
+                        className="w-7.5 h-7.5 flex items-center justify-center rounded-[6px] -translate-y-2 max-[600px]:hidden"
                         style={{ backgroundColor: module.color }}
                       >
                         <Image
@@ -242,13 +242,13 @@ export default async function Page() {
                       </div>
                     </div>
                   </div>
-                  <p className="max-w-129.25 text-white text-lg leading-6 font-intro max-[1280px]:max-w-112.5 max-[1060px]:max-w-83 max-[850px]:max-w-full max-[850px]:col-span-2">
+                  <p className="max-w-129.25  text-white text-lg leading-6 font-intro max-[1280px]:max-w-112.5 max-[1060px]:max-w-83 max-[850px]:max-w-full max-[850px]:col-span-2 max-[600px]:text-sm max-[600px]:leading-normal">
                     {module.description}
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
-                    <div className="relative w-full h-90.75">
+                  <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1 pb-18.5">
+                    <div className="relative w-full h-90.75 max-[600px]:h-45">
                       <Image
                         src={isValidMedia(module.image) ? module.image.url! : '/default-image.png'}
                         fill
@@ -259,7 +259,7 @@ export default async function Page() {
                     <div className="w-full">
                       <RichText
                         data={module.description2}
-                        className="max-w-129.25 text-white text-lg leading-6 font-intro max-[850px]:max-w-full"
+                        className="max-w-130 text-white text-lg leading-6 font-intro max-[850px]:max-w-full"
                       />
                       <a href={module.link} target="_blank" rel="noopener noreferrer">
                         <Button variant={'primary'} className="mt-10">

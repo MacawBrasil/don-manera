@@ -1,7 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import * as AccordionPrimitive from '@radix-ui/react-accordion'
+import { ChevronDownIcon } from 'lucide-react'
+import { Accordion as AccordionPrimitive } from 'radix-ui'
 
 import { cn } from '@/lib/utils'
 
@@ -32,7 +33,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          'relative w-7.5 h-7.5 focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>#open]:opacity-0',
+          'relative w-7.5 h-7.5 cursor-pointer focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>#open]:opacity-0',
           className,
         )}
         {...props}
@@ -45,7 +46,7 @@ function AccordionTrigger({
           viewBox="0 0 30 30"
           fill="none"
           id="open"
-          className="absolute right-4 top-1/2 -translate-y-1/2 transition-all"
+          className="absolute right-4 top-1/2 -translate-y-1/2 transition-all max-[768px]:-translate-y-10 max-[600px]:-translate-y-23"
         >
           <g clipPath="url(#clip0_1_248)" fill="#D9CCB2">
             <path d="M22.09 0H7.91C3.55 0 0 3.549 0 7.91v14.18C0 26.45 3.549 30 7.91 30h14.18C26.45 30 30 26.451 30 22.09V7.91C30 3.55 26.451 0 22.09 0zm6.152 22.09a6.16 6.16 0 01-6.152 6.152H7.91a6.16 6.16 0 01-6.152-6.152V7.91A6.16 6.16 0 017.91 1.758h14.18a6.16 6.16 0 016.152 6.152v14.18z" />
@@ -64,7 +65,7 @@ function AccordionTrigger({
           viewBox="0 0 30 30"
           fill="none"
           id="close"
-          className="absolute right-4 top-1/2 -translate-y-1/2 transition-all"
+          className="absolute right-4 top-1/2 -translate-y-1/2 transition-all max-[768px]:-translate-y-10 max-[600px]:-translate-y-23"
         >
           <g clipPath="url(#clip0_1_252)" fill="#D9CCB2">
             <path d="M22.09 0H7.91C3.55 0 0 3.549 0 7.91v14.18C0 26.45 3.549 30 7.91 30h14.18C26.45 30 30 26.451 30 22.09V7.91C30 3.55 26.451 0 22.09 0zm6.152 22.09a6.16 6.16 0 01-6.152 6.152H7.91a6.16 6.16 0 01-6.152-6.152V7.91A6.16 6.16 0 017.91 1.758h14.18a6.16 6.16 0 016.152 6.152v14.18z" />
@@ -89,13 +90,10 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className={cn(
-        'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm',
-        className,
-      )}
+      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
       {...props}
     >
-      <div className="pt-0 pb-4">{children}</div>
+      <div className={cn('pt-0 pb-4', className)}>{children}</div>
     </AccordionPrimitive.Content>
   )
 }
