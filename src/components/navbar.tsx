@@ -19,7 +19,7 @@ export const leftMenuItems = [
 ]
 
 export const rightMenuItems = [
-  { id: 5, label: 'Fidelidade', href: '/comunita' },
+  { id: 5, label: 'Fidelidade', href: '/rimborso' },
   { id: 6, label: 'Escola', href: '/professionale' },
   { id: 7, label: 'Visagismo', href: '/visagismo' },
 ]

@@ -43,8 +43,8 @@ export function BrandSection({
     <div className="bg-bege w-full max-[1000px]:pt-10 relative">
       <div
         className={cn(
-          'w-full max-w-377.5 flex items-center max-[768px]:flex-col max-[768px]:gap-y-10',
-          absolute && 'absolute left-0 -top-28 z-10 max-[768px]:static',
+          'w-full max-w-377.5 mx-auto flex items-center max-[768px]:flex-col max-[768px]:gap-y-10',
+          absolute && 'absolute left-0 right-0 -top-28 z-10 max-[768px]:static',
         )}
       >
         <div className="relative w-207 h-109 max-[1525px]:w-11/12 z-30">
@@ -52,7 +52,7 @@ export function BrandSection({
             src={isValidMedia(bannerGroup.image1) ? bannerGroup.image1.url! : '/default-image.png'}
             fill
             alt="Brand Image"
-            className="object-cover max-[768px]:rounded-[30px]"
+            className="object-cover max-[768px]:rounded-[30px] min-[1525px]:rounded-l-[30px]"
           />
         </div>
         <div className="relative w-207 h-109 max-[1525px]:w-11/12">
@@ -60,7 +60,7 @@ export function BrandSection({
             src={isValidMedia(bannerGroup.image2) ? bannerGroup.image2.url! : '/default-image.png'}
             fill
             alt="Brand Image"
-            className="object-cover rounded-r-[30px] max-[768px]:rounded-[30px]"
+            className="object-cover rounded-r-[30px] max-[768px]:rounded-[30px] min-[1525px]:rounded-r-[30px]"
           />
         </div>
       </div>
@@ -71,7 +71,7 @@ export function BrandSection({
           absolute && 'pt-80 max-[768px]:pt-0',
         )}
       >
-        <Container className="z-30 flex gap-14 -mt-9 justify-between ml-14 max-[600px]:mt-0 max-[600px]:ml-0">
+        <Container className="z-30 flex gap-14 -mt-9 justify-between max-[1525px]:ml-14 max-[600px]:mt-0 max-[600px]:ml-0">
           <div className="relative w-162.5 h-213 max-[1335px]:w-135 max-[1335px]:h-160 max-[1225px]:w-110 -mt-32 max-[1125px]:hidden">
             <Image
               src={

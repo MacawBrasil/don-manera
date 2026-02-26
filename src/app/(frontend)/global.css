@@ -127,6 +127,12 @@
     @apply bg-background text-foreground;
   }
 
+  html {
+    @media (max-width: 1366px) {
+      font-size: 90%;
+    }
+  }
+
   ul,
   ol {
     all: revert;

@@ -319,9 +319,15 @@ export default async function HomePage() {
               {/* Overlay com conteúdo */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 max-[600px]:bg-black/40 transition-all duration-300">
                 <div className="flex flex-col items-center transition-all duration-300 group-hover:-translate-y-4 max-[600px]:-translate-y-4">
-                  <span className="text-white font-intro font-bold text-5xl translate-y-28 transition-all group-hover:translate-y-0 max-[600px]:translate-y-0 duration-300 max-[769px]:text-3xl max-[769px]:leading-8">
-                    {visagismo.thumbInfo.title}
-                  </span>
+                  {isValidMedia(visagismo.thumbInfo.logo) && (
+                    <Image
+                      src={visagismo.thumbInfo.logo.url!}
+                      width={visagismo.thumbInfo.logo.width!}
+                      height={visagismo.thumbInfo.logo.height!}
+                      alt="Logo Visagismo"
+                      className="max-w-32 h-auto translate-y-28 transition-all group-hover:translate-y-0 max-[600px]:translate-y-0 duration-300"
+                    />
+                  )}
 
                   {/* Descrição - aparece no hover */}
                   <p className="text-[#FAFFFC] mt-14 mb-8 text-center text-lg max-w-48.75 opacity-0 group-hover:opacity-100 max-[600px]:opacity-100 transition-opacity duration-300">
