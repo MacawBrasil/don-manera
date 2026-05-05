@@ -2,12 +2,12 @@ import { revalidatePath } from 'next/cache'
 import type { GlobalAfterChangeHook } from 'payload'
 
 const globalToPathsMap: Record<string, string[]> = {
-  home: ['/'],
-  sobre: ['/', '/sobre'],
+  home: ['/', '/lp'],
+  sobre: ['/', '/sobre', '/lp'],
   servicePage: ['/', '/servicos'],
   rimborso: ['/', '/rimborso'],
   visagismo: ['/', '/visagismo'],
-  comunita: ['/', '/comunita'],
+  comunita: ['/', '/comunita', '/lp'],
   Profissionale: ['/', '/professionale'],
   contato: ['/contato'],
   'landing-page': ['/lp'],
