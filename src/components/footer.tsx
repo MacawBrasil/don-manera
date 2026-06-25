@@ -61,10 +61,7 @@ export function Footer({ data, padding }: FooterProps) {
                   data={unidade.address}
                   className="mt-3 text-[#151515] font-intro text-lg font-normal min-h-28 leading-5 max-[901px]:min-h-0 max-[901px]:mb-4"
                 />
-                <a
-                  href={`https://wa.me/${unidade.numero}?text=Olá, gostaria de saber mais sobre os serviços da Unidade ${unidade.nome}`}
-                  className="mt-7"
-                >
+                <a href={unidade.linkWhatsapp!} className="mt-7">
                   <Button
                     variant={'primary'}
                     className="border-terra hover:bg-terra min-w-full group"
