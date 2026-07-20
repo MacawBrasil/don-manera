@@ -72,7 +72,7 @@ export default async function ServicosPage() {
                   />
                 </div>
                 <div className="flex-1 flex flex-col justify-between items-start mt-2 w-full pl-6 max-[1225px]:pl-0">
-                  <h3 className="line-clamp-2 text-white text-2xl max-w-28 font-intro max-[1225px]:text-xl">
+                  <h3 className="line-clamp-2 text-white text-2xl font-intro max-[1225px]:text-xl">
                     {service.title}
                   </h3>
                   <div>

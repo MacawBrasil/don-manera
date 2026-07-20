@@ -130,9 +130,12 @@ export default async function HomePage() {
                   <h3 className="line-clamp-2 text-terra text-2xl font-intro max-[1225px]:text-xl">
                     {service.title}
                   </h3>
-                  <p className="text-center mb-4 text-terra font-light font-intro text-4xl max-[1225px]:text-2xl">
-                    R$ {service.price.toFixed(2).replace('.', ',')}
-                  </p>
+                  <div className="mb-4 text-terra font-intro font-light">
+                    <span className="block text-sm max-[1225px]:text-xs">A partir de</span>
+                    <p className="text-center text-4xl max-[1225px]:text-2xl">
+                      R$ {service.price.toFixed(2).replace('.', ',')}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
