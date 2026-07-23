@@ -8,11 +8,11 @@ import { Container } from '@/components/container'
 import { RichText } from '@/components/RichText'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { VideoPlayerStatic } from '@/components/video-player-static'
 import { Footer } from '@/components/footer'
 import { BrandSection } from '@/components/brand-section'
 import { generateSeoMetadata } from '@/lib/seo'
 import { Metadata } from 'next'
+import { MediaBlockRenderer } from '@/components/media-block-renderer'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
@@ -159,9 +159,10 @@ export default async function HomePage() {
       />
 
       <div className="w-full bg-terra pt-148 flex flex-col items-center relative max-[601px]:gap-20 max-[601px]:pt-20 pb-14">
-        <VideoPlayerStatic
-          videoUrl={isValidMedia(page.brandSection.video) ? page.brandSection.video.url! : ''}
-          posterUrl="/poster-video.png"
+        <MediaBlockRenderer
+          blocks={page.brandSection.media}
+          fallbackVideo={page.brandSection.video}
+          variant="static"
         />
 
         <Container>

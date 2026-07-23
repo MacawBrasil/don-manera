@@ -1,6 +1,7 @@
 import { GlobalConfig } from 'payload'
 import { seoFields } from './seo'
 import { revalidateAfterChange } from '@/hooks/revalidate'
+import { createMediaBlocksField } from '@/fields/mediaBlocks'
 
 export const Home: GlobalConfig = {
   slug: 'home',
@@ -115,13 +116,17 @@ export const Home: GlobalConfig = {
           name: 'buttonLink',
           type: 'text',
         },
+        createMediaBlocksField({
+          imageDescription: 'Dimensões da imagem 1200x630',
+          videoDescription: 'Dimensões do vídeo 1200x630. Tamanho máximo de 5MB',
+          posterDescription: 'Dimensões da imagem 1200x630',
+        }),
         {
           name: 'video',
           type: 'upload',
           relationTo: 'media',
-          required: true,
           admin: {
-            description: 'Dimensões da imagem 1200x630. Tamanho máximo de 5MB',
+            hidden: true,
           },
         },
       ],

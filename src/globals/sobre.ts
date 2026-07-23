@@ -1,6 +1,7 @@
 import { GlobalConfig } from 'payload'
 import { seoFields } from './seo'
 import { revalidateAfterChange } from '@/hooks/revalidate'
+import { createMediaBlocksField } from '@/fields/mediaBlocks'
 
 export const Sobre: GlobalConfig = {
   slug: 'sobre',
@@ -63,22 +64,25 @@ export const Sobre: GlobalConfig = {
         description: 'Dimensões da imagem 310x530',
       },
     },
+    createMediaBlocksField({
+      imageDescription: 'Dimensões da imagem 1200x650',
+      videoDescription: 'Dimensões do vídeo 1200x650. Tamanho máximo de 5MB',
+      posterDescription: 'Dimensões da imagem 1200x650',
+    }),
     {
       name: 'video',
       type: 'upload',
       relationTo: 'media',
-      required: true,
       admin: {
-        description: 'Dimensões da imagem 1200x650. Tamanho máximo de 5MB',
+        hidden: true,
       },
     },
     {
       name: 'thumbVideo',
       type: 'upload',
       relationTo: 'media',
-      required: true,
       admin: {
-        description: 'Dimensões da imagem 1200x650',
+        hidden: true,
       },
     },
     {

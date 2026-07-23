@@ -439,9 +439,33 @@ export interface Home {
     buttonTitle?: string | null;
     buttonLink?: string | null;
     /**
-     * Dimensões da imagem 1200x630. Tamanho máximo de 5MB
+     * Escolha uma imagem ou um vídeo para exibir nesta seção.
      */
-    video: string | Media;
+    media: (
+      | {
+          /**
+           * Dimensões da imagem 1200x630
+           */
+          image: string | Media;
+          id?: string | null;
+          blockName?: string | null;
+          blockType: 'image';
+        }
+      | {
+          /**
+           * Dimensões do vídeo 1200x630. Tamanho máximo de 5MB
+           */
+          video: string | Media;
+          /**
+           * Dimensões da imagem 1200x630
+           */
+          poster?: (string | null) | Media;
+          id?: string | null;
+          blockName?: string | null;
+          blockType: 'video';
+        }
+    )[];
+    video?: (string | null) | Media;
   };
   benefitsSection: {
     title: {
@@ -659,13 +683,34 @@ export interface Sobre {
    */
   liderancaImage: string | Media;
   /**
-   * Dimensões da imagem 1200x650. Tamanho máximo de 5MB
+   * Escolha uma imagem ou um vídeo para exibir nesta seção.
    */
-  video: string | Media;
-  /**
-   * Dimensões da imagem 1200x650
-   */
-  thumbVideo: string | Media;
+  media: (
+    | {
+        /**
+         * Dimensões da imagem 1200x650
+         */
+        image: string | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'image';
+      }
+    | {
+        /**
+         * Dimensões do vídeo 1200x650. Tamanho máximo de 5MB
+         */
+        video: string | Media;
+        /**
+         * Dimensões da imagem 1200x650
+         */
+        poster?: (string | null) | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'video';
+      }
+  )[];
+  video?: (string | null) | Media;
+  thumbVideo?: (string | null) | Media;
   profissionaisNumber: number;
   avaliacoesNumber: number;
   assinanterNumber: number;
@@ -1610,6 +1655,25 @@ export interface HomeSelect<T extends boolean = true> {
         image?: T;
         buttonTitle?: T;
         buttonLink?: T;
+        media?:
+          | T
+          | {
+              image?:
+                | T
+                | {
+                    image?: T;
+                    id?: T;
+                    blockName?: T;
+                  };
+              video?:
+                | T
+                | {
+                    video?: T;
+                    poster?: T;
+                    id?: T;
+                    blockName?: T;
+                  };
+            };
         video?: T;
       };
   benefitsSection?:
@@ -1674,6 +1738,25 @@ export interface SobreSelect<T extends boolean = true> {
   image?: T;
   liderancaText?: T;
   liderancaImage?: T;
+  media?:
+    | T
+    | {
+        image?:
+          | T
+          | {
+              image?: T;
+              id?: T;
+              blockName?: T;
+            };
+        video?:
+          | T
+          | {
+              video?: T;
+              poster?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
   video?: T;
   thumbVideo?: T;
   profissionaisNumber?: T;

@@ -5,11 +5,11 @@ import { isValidMedia } from '@/lib/media'
 import { Navbar } from '@/components/navbar'
 import { Container } from '@/components/container'
 import { RichText } from '@/components/RichText'
-import { VideoPlayer } from '@/components/video-player'
 import { Stats } from '@/components/stats'
 import { Footer } from '@/components/footer'
 import { generateSeoMetadata } from '@/lib/seo'
 import { Metadata } from 'next'
+import { MediaBlockRenderer } from '@/components/media-block-renderer'
 
 export const dynamic = 'force-static'
 export const revalidate = 60
@@ -122,9 +122,10 @@ export default async function Page() {
         </svg>
       </Container>
 
-      <VideoPlayer
-        videoUrl={isValidMedia(page.video) ? page.video.url! : ''}
-        posterUrl={isValidMedia(page.thumbVideo) ? page.thumbVideo.url! : ''}
+      <MediaBlockRenderer
+        blocks={page.media}
+        fallbackVideo={page.video}
+        fallbackPoster={page.thumbVideo}
       />
 
       <div className="w-full mt-32">
