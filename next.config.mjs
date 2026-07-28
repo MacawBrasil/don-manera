@@ -13,6 +13,12 @@ const nextConfig = {
 
     return webpackConfig
   },
+  redirects: async () => [
+    {
+      source: '/site',
+      destination: '/',
+    },
+  ],
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
