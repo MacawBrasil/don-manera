@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/sonner'
 import { WhatsappMenu } from '@/components/whatsapp-menu'
 import { getPayload } from 'payload'
+import CookieConsent from '@/components/CookieConsent'
 
 const openSans = Open_Sans({ subsets: ['latin'], style: 'normal', variable: '--font-open-sans' })
 
@@ -47,6 +48,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="pt-BR">
+      <head>
+        <script
+          type="text/plain"
+          data-category="analytics"
+          data-src="https://www.googletagmanager.com/gtag/js?id=GTM-MJNZ38Z"
+        />
+        <CookieConsent />
+      </head>
       <body className={cn(intro.variable, openSans.variable, 'font-intro')}>
         <main>{children}</main>
         <Toaster />
